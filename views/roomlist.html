@@ -8,32 +8,35 @@
     <title>MATRIOSCA</title>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="top">
-                <a href="index.html" class="bigword">MATRIOSCA</a>
-                <a href="login.html" class="authentication">Log In</a>
-                <a href="signup.html" class="authentication">Sign up</a>
-            </div>
-            <nav class="navegacao">
-                <a href="profile.html">Profile</a>
-                <a href="friends.html">Friends</a>
-                <a href="roomlist.html">Rooms</a>
-                <a href="leaderboard.html">Leaderboard</a>
-                <a href="feedback.html">Feedback</a>
-            </nav>
-        </header>
 
-        <div class="plslogin">
-                <h3>Uh oh!</h3>
-                <p>It seems like you currently aren't logged into an account! You may still be able to play the Casual gamemode, but you will need an account to play the rest so that your score can be properly registered! Please sign up or log into your account on the <b>top left corner</b>.</p>
+    <!-- Layout principal: sidebar left + center + sidebar right-->
+    <div class="page-layout">
+
+        <aside class="page-sidebar"></aside> <!-- Sidebar left -->
+
+        <div class="page-center">
+            <!-- Header -->
+            <header class="header-left">
+                <a href="index.html">MATRIOSCA</a>
+
+                <nav class="header-nav">
+                    <a href="createroom.html">Create</a>
+                    <a href="friends.html">Friends</a>
+                    <a href="leaderboard.html">Leaderboard</a>
+                </nav>
+
+            </header>
+
+            <!-- Center -->
+            <main class="page-main" style="text-align: center;">
+                <h3 style = "margin-top: 40px;">Rooms</h3>
+                <p>Choose a game mode and join a room, or create your own.</p>
+            </main>
         </div>
 
-
-
-        <footer class="foot">Universidade da Madeira 2025-2026</footer>
+        <aside class="page-sidebar"></aside> <!-- Sidebar right -->
     </div>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
