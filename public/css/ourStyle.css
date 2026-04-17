@@ -1,16 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;900&display=swap');
+
 body {
     margin: 0;
-    padding: 2rem;
-    font-family: sans-serif;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 
     background-color: #268626;
+}
+
+/* Page Layout - Side Columns + Center*/
+
+/* Flex container: sidebar + center + sidebar in a row, fills the entire viewport */
+.page-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+/* Fixed 150px side columns, do not shrink */
+.page-sidebar {
+    width: 150px;
+    flex-shrink: 0;
+    background-color: #268626;
+}
+
+/* Flexible center column containing header + content stacked vertically */
+.page-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content area, expands to fill remaining space */
+.page-main {
+    flex: 1;
+}
+
+
+/* Headers */
+
+/* Header with title aligned left */
+.header-left {
+    height: 80px;
+    background-color: #52CD1D;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 900;
+    padding-left: 4rem;
+}
+
+.header-left a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Navigation links pushed to the right side of the header */
+.header-nav {
+    margin-left: auto;
+    padding-right: 14rem;
+    display: flex;
+    gap: 8rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.header-nav a {
+    border: none;
 }
 
 .row {
     margin-left: 0;
     margin-right: 0;
 }
-
+/* END*/
 
 
 .top {
@@ -67,7 +131,8 @@ nav>a:active{
     border: 3px solid #8f9390;
 }
 
-.plslogin>p, h3 {
+.plslogin > p,
+.plslogin h3 {
     padding-left: 10px;
 }
 
@@ -84,11 +149,63 @@ nav>a:active{
     border-top: 1px solid #268626;
 }
 
+/* Rooms Styles */
+
+/* END */
 
 
+/* Login and Signup Styles */
 
+.ls-header {
+    height: 80px;
+    font-weight: 900;
+    background-color: #52CD1D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 900;
+}
 
+.ls-header a {
+    color: #000000;
+    text-decoration: none;
+}
 
+.ls-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; 
+    margin-top: 40px;
+    margin-bottom: 2rem;
+}
+
+.ls-card {
+    width: 100%;
+    max-width: 400px; 
+    padding: 30px;  
+    border-radius: 10px;
+    background-color: #52CD1D;
+}
+
+.ls-button {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #268626;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.ls-button:hover {
+    background-color: #1f6d1f;
+}
+/* END */
 
 
 
