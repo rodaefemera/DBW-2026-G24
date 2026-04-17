@@ -2,4 +2,113 @@ body {
     margin: 0;
     padding: 2rem;
     font-family: sans-serif;
+
+    background-color: #268626;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+
+.top {
+    background-color: #52CD1D;
+    overflow: hidden;
+    padding: 10px 20px;
+    border-radius: 7px 7px 0 0;
+}
+
+.authentication {
+    float: right;
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+}
+
+.bigword{
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    margin-left: 42.5%;
+}
+
+
+
+.navegacao{
+    background-color: #53AC2D;
+    overflow: hidden;
+    display: flex;
+    border-top: 1px solid #268626;
+}
+
+nav>a{
+    flex: 1;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 0;
+    border-right: 1px solid #268626; 
+}
+
+nav>a:hover{
+    color: white;
+}
+
+nav>a:active{
+    color: black;
+}
+
+
+.plslogin {
+    background-color: #D9D9D9;
+    border: 3px solid #8f9390;
+}
+
+.plslogin>p, h3 {
+    padding-left: 10px;
+}
+
+
+
+
+
+
+
+.foot {
+    background-color: #53AC2D;
+    border-radius: 0 0 7px 7px;
+    text-align: center;
+    border-top: 1px solid #268626;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.topauth {
+    
+}
+
+.footauth {
+    
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 540px) {
+    
 }
