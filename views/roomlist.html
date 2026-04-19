@@ -31,6 +31,139 @@
             <main class="page-main" style="text-align: center;">
                 <h3 style = "margin-top: 40px;">Rooms</h3>
                 <p>Choose a game mode and join a room, or create your own.</p>
+
+                <div class="rooms-container">
+                    <!-- Card Casual -->
+                    <div class="rooms-card">
+                        <h4>Casual</h4>
+                        <hr>
+                        <ul>
+                            <li>
+                                <span>Room of: ProGamer</span>
+                                <span>2/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                            <li>
+                                <span>Room of: xNoobSlayer</span>
+                                <span>5/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                            <li>
+                                <span>Room of: GameMaster</span>
+                                <span>1/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                            <li>
+                                <span>Room of: Striker99</span>
+                                <span>7/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                            <li>
+                                <span>Room of: ProGamer</span>
+                                <span>2/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                            <li>
+                                <span>Room of: ProGamer</span>
+                                <span>2/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                            <li>
+                                <span>Room of: ProGamer</span>
+                                <span>2/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                            <li>
+                                <span>Room of: ProGamer</span>
+                                <span>2/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                            <li>
+                                <span>Room of: ProGamer</span>
+                                <span>2/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                            <li>
+                                <span>Room of: ProGamer</span>
+                                <span>2/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                            <li>
+                                <span>Room of: ProGamer</span>
+                                <span>2/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                            <li>
+                                <span>Room of: ProGamer</span>
+                                <span>2/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Card Time Attack -->
+                    <div class="rooms-card">
+                        <h4>Time Attack</h4>
+                        <hr>
+                        <ul>
+                            <li>
+                                <span>Room of: SpeedKing</span>
+                                <span>3/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                            <li>
+                                <span>Room of: FlashRunner</span>
+                                <span>6/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                            <li>
+                                <span>Room of: TimeLord</span>
+                                <span>4/8 Players</span>
+                                <a href="#">[Join]</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 1st 2 3 -->
+                    <div class="rooms-card">
+                        <h4>1st 2 3</h4>
+                        <hr>
+                    </div>
+                </div>
+                <!-- Action Buttons -->
+                <div class="rooms-actions">
+
+                    <!-- Quickplay Dropdown (left) -->
+                    <div class="rooms-action-side">
+                        <div class="rooms-dropdown">
+                            <button class="rooms-btn rooms-dropdown-btn" onclick="toggleDropdown()"> Quickplay ⏷ </button>
+                            <div class="rooms-dropdown-menu" id="quickplayMenu">
+                                <a href="#">Casual</a>
+                                <a href="#">Time Attack</a>
+                                <a href="#">1st 2 3</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Create Room (center) -->
+                    <div class="rooms-action-center">
+                        <a href="roombase.html" class="rooms-btn rooms-create-btn">Create Room</a>
+                    </div>
+
+                    <!-- Join by Code (right) -->
+                    <div class="rooms-action-side">
+                        <input type="text" class="rooms-code-input" placeholder="Room Code (#XYZ-123)">
+                        <a href="#" class="rooms-btn rooms-join-btn">Join</a>
+                    </div>
+
+                </div>
+
+                <script>
+                    function toggleDropdown() {
+                        document.getElementById('quickplayMenu').classList.toggle('show');
+                    }
+                </script>
             </main>
         </div>
 
