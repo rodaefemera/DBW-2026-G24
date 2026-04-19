@@ -151,6 +151,173 @@ nav>a:active{
 
 /* Rooms Styles */
 
+.rooms-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: flex-start;
+    margin-top: 50px;
+    flex-wrap: wrap; /* Makes card jump if not enough space*/ 
+}
+
+.rooms-card {
+    width: 330px;
+    border: 1px solid #000000;
+    background-color: #EDF5EE;
+    text-align: left;
+}
+
+/* Title of card*/
+.rooms-card h4 {
+    margin: 0;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-bottom: 1px solid #000000;
+}
+
+/* Horizontal line reset*/
+.rooms-card hr {
+    margin: 0;
+    border: none;
+}
+
+/* Removes ul default stylings*/
+.rooms-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 360px;
+    overflow-y: auto; /* Vertical Scrollbar when max limit*/
+}
+
+/* Styling for each row*/
+.rooms-card li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 15px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #000000;
+}
+
+.rooms-card li:nth-child(odd) {
+    background-color: #DEE7DE;
+}
+
+.rooms-card li:nth-child(even) {
+    background-color: #BECCBE;
+}
+
+/* Username*/
+.rooms-card li span:first-child { 
+    overflow: hidden; /* Shrink if not enough space */
+    text-overflow: ellipsis; /* Show ...*/
+    white-space: nowrap; /* Prevent line break */
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.rooms-card li span:nth-child(2) {
+    flex-shrink: 0; /* Doesnt shrink*/
+}
+
+/* Action Buttons Section - Container for Quickplay, Create Room and Join */
+.rooms-actions {
+    display: flex;
+    justify-content: center; /* Center the 3 buttons horizontally */
+    align-items: flex-end; /* Align buttons to the bottom so center can be raised */
+    gap: 230px;
+    margin-top: 60px;
+    margin-bottom: 150px;
+}
+
+/* Center button wrapper - raised above the side buttons */
+.rooms-action-center {
+    margin-bottom: 20px; /* Pushes Create Room higher than side buttons */
+}
+
+/* Side button wrapper - stacks elements vertically (input above button on right side) */
+.rooms-action-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Base style shared by all 3 buttons */
+.rooms-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 6px;
+    background-color: #53AC2D;
+    color: #000000;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s; /* Smooth hover transition */
+    font-family: inherit;
+}
+
+/* Slightly darker green on hover */
+.rooms-btn:hover {
+    background-color: #449023;
+}
+
+/* Quickplay Dropdown - relative so the menu positions below the button */
+.rooms-dropdown {
+    position: relative;
+}
+
+/* Hidden dropdown menu, appears below the Quickplay button */
+.rooms-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px); /* Below the button + 5px gap */
+    left: 0;
+    width: 100%; /* Same width as the button */
+    background-color: #EDF5EE;
+    border: 1px solid #000000;
+    z-index: 10; /* Stays on top of other elements */
+}
+
+/* Shown when toggled via JavaScript */
+.rooms-dropdown-menu.show {
+    display: block;
+}
+
+/* Individual game mode links inside the dropdown */
+.rooms-dropdown-menu a {
+    display: block;
+    padding: 8px 15px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #000000;
+}
+
+/* Remove border on the last item */
+.rooms-dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+/* Highlight on hover */
+.rooms-dropdown-menu a:hover {
+    background-color: #DEE7DE;
+}
+
+/* Input field for entering a room code */
+.rooms-code-input {
+    padding: 8px 12px;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    font-size: 0.60rem;
+    text-align: center;
+    width: 150px;
+    font-family: inherit;
+}
+
 /* END */
 
 
