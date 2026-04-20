@@ -40,6 +40,12 @@ body {
 
 /* Headers */
 
+
+/* para garantir que o header e a navbar está em cima de tudo */
+header {
+    z-index: 9999 !important;
+}
+
 /* Header with title aligned left */
 .header-left {
     height: 80px;
@@ -97,7 +103,7 @@ body {
     font-weight: bold;
     text-decoration: none;
     color: black;
-    margin-left: 42.5%;
+    margin-left: 4%;
 }
 
 
@@ -127,11 +133,193 @@ nav>a:active {
 }
 
 
-.plslogin {
+.whitebg {
+    background-color: white;
+}
+
+.whitebg h6 {
+    text-align: center;
+    padding: 10px;
+}
+
+.graybg{
     background-color: #D9D9D9;
     border: 3px solid #8f9390;
 }
 
+.buttdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bigbutt {
+    font-size: 2rem;
+    padding: 1.5rem;
+    font-weight: 800;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 350px;
+    margin: 20px;
+}
+
+.btn-danger {
+    margin-left: 50px !important;
+}
+
+.btn-primary {
+    margin-right: 50px !important;
+}
+
+
+
+
+
+.noscroll {
+    height: 100vh;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.noscroll>.whitebg {
+    align-items: center;
+    min-height: 0;  
+}
+
+
+
+
+.lb-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lb-content>div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.lb-tabs {
+    display: flex;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.lb-tab {
+    width: 50%;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 800;
+    cursor: pointer;
+    flex-shrink: 0;
+    color: white;
+}
+
+.lb-tab:hover {
+    color: black;
+}
+
+.lb-tab:active {
+    color: white;
+}
+
+.tab-time {
+    background: #dc3545;
+    border-top-left-radius: 12px;
+}
+
+.tab-123 {
+    background: #0d6efd;
+    border-top-right-radius: 12px;
+}
+
+.lb-wrapper {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lb-box {
+    overflow: hidden;
+}
+
+.lb-box>table {
+    display: block;
+    height: 100%;
+    border-radius: 0 0 12px 12px;
+    text-align: center;
+}
+
+.lb-box tbody {
+    display: block;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.lb-box thead, .lb-box tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.lb-wrapper.active-time .lb-box table {
+    border: 1px solid #dc3545 !important;
+}
+
+.lb-wrapper.active-123 .lb-box table {
+    border: 1px solid #0d6efd !important;
+}
+
+
+.lb-wrapper.active-time .lb-box th,
+.lb-wrapper.active-time .lb-box td {
+    background: #f8d7da !important;
+}
+
+.lb-wrapper.active-123 .lb-box th,
+.lb-wrapper.active-123 .lb-box td {
+    background: #dbeafe !important;
+}
+
+
+
+
+.fb-content {
+    display: flex;
+    justify-content: center;
+}
+
+.fb-content>div {
+    display: flex;
+    justify-content: center;
+    padding: 100% 0;
+}
+
+.fb-card {
+    background-color: #52CD1D;
+    border-radius: 12px;
+    padding: 10px;
+    max-width: 600px;
+}
+
+.fb-form>p, .fb-form>h4{
+    text-align: center;
+}
+
+#feedbackForm>button {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+
+textarea.form-control {
+    resize: none;
+    overflow-y: auto;
+    max-height: 200px;
 .plslogin>p,
 .plslogin h3 {
     padding-left: 10px;
@@ -497,6 +685,29 @@ nav>a:active {
 
 
 
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 540px) {
+    
+    .nophone {
+        display: none;
+    }
+
+    .btn-danger {
+        margin-left: 20px !important;
+    }  
+
+    .btn-primary {
+        margin-right: 20px !important;
+    }
+
+}
 .topauth {}
 
 .footauth {}
