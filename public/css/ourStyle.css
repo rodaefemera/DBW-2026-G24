@@ -74,6 +74,7 @@ body {
     margin-left: 0;
     margin-right: 0;
 }
+
 /* END*/
 
 
@@ -91,7 +92,7 @@ body {
     margin-left: 15px;
 }
 
-.bigword{
+.bigword {
     font-size: 2rem;
     font-weight: bold;
     text-decoration: none;
@@ -101,27 +102,27 @@ body {
 
 
 
-.navegacao{
+.navegacao {
     background-color: #53AC2D;
     overflow: hidden;
     display: flex;
     border-top: 1px solid #268626;
 }
 
-nav>a{
+nav>a {
     flex: 1;
     color: black;
     text-align: center;
     text-decoration: none;
     padding: 5px 0;
-    border-right: 1px solid #268626; 
+    border-right: 1px solid #268626;
 }
 
-nav>a:hover{
+nav>a:hover {
     color: white;
 }
 
-nav>a:active{
+nav>a:active {
     color: black;
 }
 
@@ -131,7 +132,7 @@ nav>a:active{
     border: 3px solid #8f9390;
 }
 
-.plslogin > p,
+.plslogin>p,
 .plslogin h3 {
     padding-left: 10px;
 }
@@ -157,7 +158,8 @@ nav>a:active{
     gap: 50px;
     align-items: flex-start;
     margin-top: 50px;
-    flex-wrap: wrap; /* Makes card jump if not enough space*/ 
+    flex-wrap: wrap;
+    /* Makes card jump if not enough space*/
 }
 
 .rooms-card {
@@ -188,7 +190,8 @@ nav>a:active{
     margin: 0;
     padding: 0;
     max-height: 360px;
-    overflow-y: auto; /* Vertical Scrollbar when max limit*/
+    overflow-y: auto;
+    /* Vertical Scrollbar when max limit*/
 }
 
 /* Styling for each row*/
@@ -210,23 +213,29 @@ nav>a:active{
 }
 
 /* Username*/
-.rooms-card li span:first-child { 
-    overflow: hidden; /* Shrink if not enough space */
-    text-overflow: ellipsis; /* Show ...*/
-    white-space: nowrap; /* Prevent line break */
+.rooms-card li span:first-child {
+    overflow: hidden;
+    /* Shrink if not enough space */
+    text-overflow: ellipsis;
+    /* Show ...*/
+    white-space: nowrap;
+    /* Prevent line break */
     flex-shrink: 1;
     min-width: 0;
 }
 
 .rooms-card li span:nth-child(2) {
-    flex-shrink: 0; /* Doesnt shrink*/
+    flex-shrink: 0;
+    /* Doesnt shrink*/
 }
 
 /* Action Buttons Section - Container for Quickplay, Create Room and Join */
 .rooms-actions {
     display: flex;
-    justify-content: center; /* Center the 3 buttons horizontally */
-    align-items: flex-end; /* Align buttons to the bottom so center can be raised */
+    justify-content: center;
+    /* Center the 3 buttons horizontally */
+    align-items: flex-end;
+    /* Align buttons to the bottom so center can be raised */
     gap: 230px;
     margin-top: 60px;
     margin-bottom: 150px;
@@ -234,7 +243,8 @@ nav>a:active{
 
 /* Center button wrapper - raised above the side buttons */
 .rooms-action-center {
-    margin-bottom: 20px; /* Pushes Create Room higher than side buttons */
+    margin-bottom: 20px;
+    /* Pushes Create Room higher than side buttons */
 }
 
 /* Side button wrapper - stacks elements vertically (input above button on right side) */
@@ -256,7 +266,8 @@ nav>a:active{
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.2s; /* Smooth hover transition */
+    transition: background-color 0.2s;
+    /* Smooth hover transition */
     font-family: inherit;
 }
 
@@ -274,12 +285,15 @@ nav>a:active{
 .rooms-dropdown-menu {
     display: none;
     position: absolute;
-    top: calc(100% + 5px); /* Below the button + 5px gap */
+    top: calc(100% + 5px);
+    /* Below the button + 5px gap */
     left: 0;
-    width: 100%; /* Same width as the button */
+    width: 100%;
+    /* Same width as the button */
     background-color: #EDF5EE;
     border: 1px solid #000000;
-    z-index: 10; /* Stays on top of other elements */
+    z-index: 10;
+    /* Stays on top of other elements */
 }
 
 /* Shown when toggled via JavaScript */
@@ -320,6 +334,109 @@ nav>a:active{
 
 /* END */
 
+/* Profile Styles */
+
+/* Container that splits main area into left (35%) and right (65%) */
+.profile-split {
+    display: flex;
+    min-height: 90vh;
+}
+
+/* Left panel - green background */
+.profile-left {
+    width: 35%;
+    background-color: #B4FF94;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+/* Right panel - white background */
+.profile-right {
+    width: 65%;
+    background-color: #ffffff;
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* "Profile" title on the left panel */
+.profile-title {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+/* Avatar circle with user initials */
+.profile-avatar {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: #268626;
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+/* Username text below the avatar */
+.profile-username {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.profile-edit-icon {
+    cursor: pointer;
+}
+
+/* "Personal Best" title on the right panel */
+.profile-pb-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+/* Container for the personal best entries */
+.profile-pb-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Each game mode entry */
+.profile-pb-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Game mode name */
+.profile-pb-mode {
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+/* Score value */
+.profile-pb-score {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #268626;
+    margin-left: auto;
+}
+
+/* END */
+
+
+
 
 /* Login and Signup Styles */
 
@@ -343,15 +460,15 @@ nav>a:active{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 60vh; 
+    min-height: 60vh;
     margin-top: 40px;
     margin-bottom: 2rem;
 }
 
 .ls-card {
     width: 100%;
-    max-width: 400px; 
-    padding: 30px;  
+    max-width: 400px;
+    padding: 30px;
     border-radius: 10px;
     background-color: #52CD1D;
 }
@@ -372,6 +489,7 @@ nav>a:active{
 .ls-button:hover {
     background-color: #1f6d1f;
 }
+
 /* END */
 
 
@@ -379,13 +497,9 @@ nav>a:active{
 
 
 
-.topauth {
-    
-}
+.topauth {}
 
-.footauth {
-    
-}
+.footauth {}
 
 
 
@@ -393,6 +507,4 @@ nav>a:active{
 
 
 
-@media only screen and (max-width: 540px) {
-    
-}
+@media only screen and (max-width: 540px) {}

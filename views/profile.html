@@ -1,39 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="../public/css/ourStyle.css" rel="stylesheet">
     <title>MATRIOSCA</title>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <div class="top">
-                <a href="index.html" class="bigword">MATRIOSCA</a>
-                <a href="login.html" class="authentication">Log In</a>
-                <a href="signup.html" class="authentication">Sign up</a>
-            </div>
-            <nav class="navegacao">
-                <a href="profile.html">Profile</a>
-                <a href="friends.html">Friends</a>
-                <a href="roomlist.html">Rooms</a>
-                <a href="leaderboard.html">Leaderboard</a>
-                <a href="feedback.html">Feedback</a>
-            </nav>
-        </header>
 
-        <div class="plslogin">
-                <h3>Uh oh!</h3>
-                <p>It seems like you currently aren't logged into an account! You may still be able to play the Casual gamemode, but you will need an account to play the rest so that your score can be properly registered! Please sign up or log into your account on the <b>top left corner</b>.</p>
+<body>
+
+    <!-- Layout principal: sidebar left + center + sidebar right-->
+    <div class="page-layout">
+
+        <aside class="page-sidebar"></aside> <!-- Sidebar left -->
+
+        <div class="page-center">
+            <!-- Header -->
+            <header class="header-left">
+                <a href="index.html">MATRIOSCA</a>
+
+                <nav class="header-nav" style="gap: 4rem;">
+                    <a href="roomlist.html">Play</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="friends.html">Friends</a>
+                    <a href="leaderboard.html">Leaderboard</a>
+                    <a href="feedback.html">Feedback</a>
+                </nav>
+
+            </header>
+
+            <!-- Center -->
+            <main class="page-main">
+                <div class="profile-split">
+
+                    <!-- Left Panel (35%) -->
+                    <div class="profile-left">
+                        <h2 class="profile-title">Profile</h2>
+
+                        <div class="profile-avatar">JD</div>
+                        <p class="profile-username">JohnDoe <span class="profile-edit-icon">✎</span></p>
+                    </div>
+
+                    <!-- Right Panel (65%) -->
+                    <div class="profile-right">
+                        <h2 class="profile-pb-title">Personal Best</h2>
+
+                        <div class="profile-pb-list">
+                            <div class="profile-pb-item">
+                                <span class="profile-pb-mode">Casual:</span>
+                                <span class="profile-pb-score">1250 PTS</span>
+                            </div>
+
+                            <div class="profile-pb-item">
+                                <span class="profile-pb-mode">Time Attack:</span>
+                                <span class="profile-pb-score">3400 PTS</span>
+                            </div>
+
+                            <div class="profile-pb-item">
+                                <span class="profile-pb-mode">1st 2 3:</span>
+                                <span class="profile-pb-score">870 PTS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
         </div>
 
-
-    
-        <footer class="foot">Universidade da Madeira 2025-2026</footer>
+        <aside class="page-sidebar"></aside> <!-- Sidebar right -->
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
