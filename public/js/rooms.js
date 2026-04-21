@@ -46,12 +46,14 @@ $(document).ready(function() {
         });
 
         const cardHTML = `
-            <div class="rooms-card">
-                <h4>${category.mode}</h4>
-                <hr>
-                <ul>
-                    ${roomListHTML}
-                </ul>
+            <div class="col-12 col-md-6 col-xl-4 d-flex justify-content-center">
+                <div class="rooms-card">
+                    <h4>${category.mode}</h4>
+                    <hr>
+                    <ul>
+                        ${roomListHTML}
+                    </ul>
+                </div>
             </div>
         `;
 

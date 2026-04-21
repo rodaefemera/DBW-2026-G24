@@ -286,16 +286,6 @@ textarea.form-control {
 
 /* Rooms Styles */
 
-.rooms-container {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    align-items: flex-start;
-    margin-top: 50px;
-    flex-wrap: wrap;
-    /* Makes card jump if not enough space*/
-}
-
 .rooms-card {
     width: 330px;
     border: 1px solid #000000;
@@ -361,32 +351,6 @@ textarea.form-control {
 .rooms-card li span:nth-child(2) {
     flex-shrink: 0;
     /* Doesnt shrink*/
-}
-
-/* Action Buttons Section - Container for Quickplay, Create Room and Join */
-.rooms-actions {
-    display: flex;
-    justify-content: center;
-    /* Center the 3 buttons horizontally */
-    align-items: flex-end;
-    /* Align buttons to the bottom so center can be raised */
-    gap: 230px;
-    margin-top: 60px;
-    margin-bottom: 150px;
-}
-
-/* Center button wrapper - raised above the side buttons */
-.rooms-action-center {
-    margin-bottom: 20px;
-    /* Pushes Create Room higher than side buttons */
-}
-
-/* Side button wrapper - stacks elements vertically (input above button on right side) */
-.rooms-action-side {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
 }
 
 /* Base style shared by all 3 buttons */
@@ -471,31 +435,15 @@ textarea.form-control {
 
 /* Profile Styles */
 
-/* Container that splits main area into left (35%) and right (65%) */
-.profile-split {
-    display: flex;
-    min-height: 90vh;
-}
-
 /* Left panel - green background */
 .profile-left {
-    width: 35%;
     background-color: #B4FF94;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 60px;
+    min-height: 80vh;
 }
 
 /* Right panel - white background */
 .profile-right {
-    width: 65%;
     background-color: #ffffff;
-    padding: 100px 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
 }
 
 /* "Profile" title on the left panel */
@@ -589,15 +537,6 @@ textarea.form-control {
 .ls-header a {
     color: #000000;
     text-decoration: none;
-}
-
-.ls-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-    margin-top: 40px;
-    margin-bottom: 2rem;
 }
 
 .ls-card {
@@ -1157,14 +1096,4 @@ textarea.form-control {
     }
 
 }
-.topauth {}
 
-.footauth {}
-
-
-
-
-
-
-
-@media only screen and (max-width: 540px) {}

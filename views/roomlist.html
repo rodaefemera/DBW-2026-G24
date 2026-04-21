@@ -27,34 +27,34 @@
             </header>
 
             <!-- Center -->
-            <main class="page-main whitebg" style="text-align: center; padding-top: 40px; padding-bottom: 40px;">
-                <h3 style="margin-top: 0;">Rooms</h3>
+            <main class="page-main whitebg text-center py-4">
+                <h3 class="mt-0">Rooms</h3>
                 <p>Choose a game mode and join a room, or create your own.</p>
 
-                <div class="rooms-container" id="rooms-list">
+                <div class="row g-4 justify-content-center mt-1" id="rooms-list">
                 </div>
                 <!-- Action Buttons -->
-                <div class="rooms-actions">
+                <div class="row g-3 justify-content-center align-items-end mt-4 mb-5">
 
                     <!-- Quickplay Dropdown (left) -->
-                    <div class="rooms-action-side">
+                    <div class="col-12 col-md-4 d-flex justify-content-center">
                         <div class="rooms-dropdown">
                             <button class="rooms-btn rooms-dropdown-btn" onclick="toggleDropdown()"> Quickplay ⏷ </button>
                             <div class="rooms-dropdown-menu" id="quickplayMenu">
-                                <a href="#">Casual</a>
-                                <a href="#">Time Attack</a>
-                                <a href="#">1st 2 3</a>
+                                <a href="roombase.html?mode=casual">Casual</a>
+                                <a href="roombase.html?mode=time_attack">Time Attack</a>
+                                <a href="roombase.html?mode=first_to_3">1st 2 3</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Create Room (center) -->
-                    <div class="rooms-action-center">
-                        <a href="roombase.html" class="rooms-btn rooms-create-btn">Create Room</a>
+                    <div class="col-12 col-md-4 d-flex justify-content-center">
+                        <a href="createroom.html" class="rooms-btn rooms-create-btn">Create Room</a>
                     </div>
 
                     <!-- Join by Code (right) -->
-                    <div class="rooms-action-side">
+                    <div class="col-12 col-md-4 d-flex flex-column align-items-center gap-2">
                         <input type="text" class="rooms-code-input" placeholder="Room Code (#XYZ-123)">
                         <a href="#" class="rooms-btn rooms-join-btn">Join</a>
                     </div>
