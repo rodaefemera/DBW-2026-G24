@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/css/ourStyle.css" rel="stylesheet">
+    <title>MATRIOSCA</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- header with logo and navigation -->
+        <header>
+            <div class="top">
+                <a href="index.html" class="bigword">MATRIOSCA</a>
+                <a href="login.html" class="authentication">Log In</a>
+                <a href="signup.html" class="authentication">Sign up</a>
+            </div>
+
+            <nav class="navegacao">
+                <a href="profile.html">Profile</a>
+                <a href="friends.html">Friends</a>
+                <a href="roomlist.html">Rooms</a>
+                <a href="leaderboard.html">Leaderboard</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+        </header>
+
+        <main class="friends-page">
+            <section class="friends-layout">
+
+                <!-- left panel with user info and add friend form -->
+                <aside class="friends-left">
+
+                    <p class="player-name">nome do jogador</p>
+
+                    <div class="my-name-box">
+                        <label for="myName">Teu nome:</label>
+                        <p id="myName">[nome utilizador]</p>
+                    </div>
+
+                    <!-- form to add a new friend -->
+                    <form action="/friends/search" method="GET" class="friend-search-form" id="addFriendForm">
+                        <label for="friendUsername">Adicionar amigo:</label>
+
+                        <input
+                            type="text"
+                            id="friendUsername"
+                            name="username"
+                            placeholder="username"
+                            autocomplete="off"
+                            required
+                        >
+
+                        <button type="submit">search</button>
+                    </form>
+
+                    <!-- message area -->
+                    <p id="friendMessage"></p>
+
+                </aside>
+
+                <!-- right panel where friends will be shown -->
+                <section class="friends-right">
+                    <h1>FRIENDS</h1>
+
+                    <!-- dynamic list, for now with js -->
+                    <div class="friends-list" id="friendsList"></div>
+                </section>
+
+            </section>
+        </main>
+
+        <!-- footer -->
+        <footer class="foot">
+            Universidade da Madeira 2025-2026
+        </footer>
+
+    </div>
+
+    <!-- link to JS file -->
+    <script src="../public/js/friends.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
