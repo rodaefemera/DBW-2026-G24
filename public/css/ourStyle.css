@@ -320,6 +320,8 @@ textarea.form-control {
     resize: none;
     overflow-y: auto;
     max-height: 200px;
+}
+
 .plslogin>p,
 .plslogin h3 {
     padding-left: 10px;
