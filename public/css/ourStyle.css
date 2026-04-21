@@ -449,6 +449,7 @@ textarea.form-control {
 .rooms-btn {
     display: inline-block;
     padding: 10px 30px;
+    border: none;
     border-radius: 6px;
     background-color: #53AC2D;
     color: #000000;
@@ -683,16 +684,518 @@ textarea.form-control {
 /* END */
 
 
+/* ---------- CREATE PAGE ---------- */
+
+/* main create page */
+.create-page {
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+/* center content */
+.create-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* title and subtitle alignment */
+.create-container h1,
+.create-subtitle {
+    text-align: center;
+}
+
+/* main title */
+.create-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* subtitle */
+.create-subtitle {
+    margin-bottom: 30px;
+    color: #444;
+}
+
+/* form layout */
+.create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* section box */
+.create-section {
+    background-color: #f3f3f3;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+/* section title */
+.create-section h2 {
+    margin: 0 0 15px 0;
+    font-size: 1.2rem;
+}
+
+/* mode cards container */
+.mode-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* shared box style */
+.mode-card,
+.player-option,
+.privacy-option {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+/* single mode card */
+.mode-card {
+    flex: 1;
+    min-width: 220px;
+    border-radius: 12px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* radio spacing */
+.mode-card input,
+.player-option input {
+    margin-bottom: 8px;
+}
+
+/* selected state */
+.mode-card.active,
+.player-option:has(input:checked),
+.privacy-option:has(input:checked),
+.current-player {
+    border: 2px solid #52CD1D;
+    background-color: #e6f8dd;
+}
+
+/* bold text */
+.mode-title,
+.create-button,
+.friend-search-form button,
+.room-guess-form button,
+.room-chat-form button {
+    font-weight: bold;
+}
+
+/* mode title */
+.mode-title {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+/* mode description */
+.mode-text {
+    display: block;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+/* players grid */
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+/* player option box */
+.player-option {
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+}
+
+/* player option text */
+.player-option span {
+    display: block;
+    font-size: 0.95rem;
+}
+
+/* privacy options layout */
+.privacy-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* privacy option box */
+.privacy-option {
+    border-radius: 10px;
+    padding: 14px 24px;
+}
+
+/* button area */
+.create-button-box {
+    text-align: center;
+}
+
+/* create room button */
+.create-button {
+    background-color: #52CD1D;
+    border: none;
+    padding: 14px 32px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* button hover */
+.create-button:hover {
+    background-color: #46b119;
+}
 
 
+/* ---------- FRIENDS PAGE ---------- */
+
+/* main friends page */
+.friends-page {
+    min-height: 80vh;
+    background-color: #fff;
+    padding: 0;
+}
+
+/* two column layout */
+.friends-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    min-height: 700px;
+}
+
+/* left panel */
+.friends-left {
+    background-color: #b7f07f;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* player name */
+.player-name {
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* spacing under name box */
+.my-name-box {
+    margin-bottom: 120px;
+}
+
+/* labels */
+.my-name-box label,
+.friend-search-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* search input */
+.friend-search-form input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+}
+
+/* search button */
+.friend-search-form button {
+    background-color: #268626;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+/* right panel */
+.friends-right {
+    padding: 30px 40px;
+    box-sizing: border-box;
+}
+
+/* friends title */
+.friends-right h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0 0 30px 0;
+}
+
+/* friends grid */
+.friends-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 50px;
+}
+
+/* friend card */
+.friend-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* friend avatar */
+.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+}
+
+/* friend name */
+.friend-title {
+    font-size: 1.6rem;
+    margin: 0 0 4px 0;
+    font-weight: bold;
+}
+
+/* friend status */
+.friend-status {
+    color: #555;
+}
 
 
+/* ---------- ROOM PAGE ---------- */
 
+/* top bar helper */
+.room-top {
+    position: relative;
+}
 
+/* room code and username position */
+.room-code-inline,
+.room-user-inline {
+    position: absolute;
+    top: 12px;
+    font-weight: 700;
+}
 
+/* room code */
+.room-code-inline {
+    left: 20px;
+}
 
+/* username */
+.room-user-inline {
+    right: 20px;
+}
 
+/* main room page */
+.room-page {
+    padding: 30px 20px;
+    background-color: #fff;
+}
 
+/* mode bar */
+.room-mode-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+/* mode title */
+.room-mode-bar h1 {
+    margin: 0;
+    font-size: 2.8rem;
+}
+
+/* leave room link */
+.leave-room-link {
+    text-decoration: none;
+    color: #8a2f2f;
+    font-weight: bold;
+}
+
+/* 3 column room layout */
+.room-main-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr 260px;
+    gap: 20px;
+    align-items: start;
+}
+
+/* side panels */
+.room-players-panel,
+.room-chat-panel {
+    background-color: #efefef;
+    border: 1px solid #bdbdbd;
+    padding: 15px;
+    min-height: 480px;
+    box-sizing: border-box;
+}
+
+/* panel titles */
+.room-players-panel h2,
+.room-chat-panel h2 {
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+}
+
+/* repeated box style */
+.room-player-card,
+.room-player-profile,
+.room-chat-messages {
+    background-color: #dcdcdc;
+    border: 1px solid #bdbdbd;
+}
+
+/* player card */
+.room-player-card {
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+/* small spacing for text */
+.room-player-card p,
+.room-player-profile p {
+    margin: 4px 0;
+}
+
+/* bold rank and player name */
+.room-player-rank,
+.room-player-profile-name {
+    font-weight: 700;
+}
+
+/* player profile box */
+.room-player-profile {
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* player avatar */
+.room-player-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #c2c2c2;
+    margin: 0 auto 12px auto;
+}
+
+/* words found text */
+.room-player-found {
+    margin: 4px 0;
+}
+
+/* game panel */
+.room-game-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* main word box */
+.room-word-box {
+    background-color: #e7de90;
+    border: 1px solid #c4bb6a;
+    min-height: 460px;
+    padding: 35px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* main word */
+.room-word-box h2 {
+    font-size: 3.2rem;
+    margin: 60px 0 50px 0;
+}
+
+/* answers container */
+.room-answers {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* game mode info */
+.room-mode-info {
+    margin-bottom: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* guess form */
+.room-guess-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* shared input style */
+.room-guess-form input,
+.room-chat-form input {
+    padding: 10px;
+    border: 1px solid #888;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* guess input width */
+.room-guess-form input {
+    width: 280px;
+}
+
+/* shared button style */
+.room-guess-form button,
+.room-chat-form button {
+    border: none;
+    background-color: #52CD1D;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* guess button spacing */
+.room-guess-form button {
+    padding: 10px 20px;
+}
+
+/* score text */
+.room-score-box {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* chat messages area */
+.room-chat-messages {
+    min-height: 360px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* chat messages */
+.room-chat-messages p {
+    margin: 8px 0;
+}
+
+/* chat form */
+.room-chat-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* chat button spacing */
+.room-chat-form button {
+    padding: 10px;
+}
 
 
 @media only screen and (max-width: 540px) {
