@@ -1,0 +1,1226 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+
+    background-color: #268626;
+}
+
+/* Page Layout - Side Columns + Center*/
+
+/* Flex container: sidebar + center + sidebar in a row, fills the entire viewport */
+.page-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+/* Fixed 150px side columns, do not shrink */
+.page-sidebar {
+    width: 150px;
+    flex-shrink: 0;
+    background-color: #268626;
+}
+
+/* Flexible center column containing header + content stacked vertically */
+.page-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content area, expands to fill remaining space */
+.page-main {
+    flex: 1;
+}
+
+
+/* Headers */
+
+
+/* para garantir que o header e a navbar está em cima de tudo */
+header {
+    z-index: 9999 !important;
+}
+
+/* Header with title aligned left */
+.header-left {
+    height: 80px;
+    background-color: #52CD1D;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 900;
+    padding-left: 4rem;
+}
+
+.header-left a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Navigation links pushed to the right side of the header */
+.header-nav {
+    margin-left: auto;
+    padding-right: 14rem;
+    display: flex;
+    gap: 8rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.header-nav a {
+    border: none;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* END*/
+
+
+.top {
+    background-color: #52CD1D;
+    overflow: hidden;
+    padding: 10px 20px;
+    border-radius: 7px 7px 0 0;
+}
+
+.authentication {
+    float: right;
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+}
+
+.bigword {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    margin-left: 4%;
+}
+
+
+
+.navegacao {
+    background-color: #53AC2D;
+    overflow: hidden;
+    display: flex;
+    border-top: 1px solid #268626;
+}
+
+nav>a {
+    flex: 1;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 0;
+    border-right: 1px solid #268626;
+}
+
+nav>a:hover {
+    color: white;
+}
+
+nav>a:active {
+    color: black;
+}
+
+
+.whitebg {
+    background-color: white;
+}
+
+.whitebg h6 {
+    text-align: center;
+    padding: 10px;
+}
+
+.graybg{
+    background-color: #D9D9D9;
+    border: 3px solid #8f9390;
+}
+
+.buttdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bigbutt {
+    font-size: 2rem;
+    padding: 1.5rem;
+    font-weight: 800;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 350px;
+    margin: 20px;
+}
+
+.btn-danger {
+    margin-left: 50px !important;
+}
+
+.btn-primary {
+    margin-right: 50px !important;
+}
+
+
+
+
+
+.noscroll {
+    height: 100vh;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.noscroll>.whitebg {
+    align-items: center;
+    min-height: 0;  
+}
+
+
+
+
+.lb-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lb-content>div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.lb-tabs {
+    display: flex;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.lb-tab {
+    width: 50%;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 800;
+    cursor: pointer;
+    flex-shrink: 0;
+    color: white;
+}
+
+.lb-tab:hover {
+    color: black;
+}
+
+.lb-tab:active {
+    color: white;
+}
+
+.tab-time {
+    background: #dc3545;
+    border-top-left-radius: 12px;
+}
+
+.tab-123 {
+    background: #0d6efd;
+    border-top-right-radius: 12px;
+}
+
+.lb-wrapper {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lb-box {
+    overflow: hidden;
+}
+
+.lb-box>table {
+    display: block;
+    height: 100%;
+    border-radius: 0 0 12px 12px;
+    text-align: center;
+}
+
+.lb-box tbody {
+    display: block;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.lb-box thead, .lb-box tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.lb-wrapper.active-time .lb-box table {
+    border: 1px solid #dc3545 !important;
+}
+
+.lb-wrapper.active-123 .lb-box table {
+    border: 1px solid #0d6efd !important;
+}
+
+
+.lb-wrapper.active-time .lb-box th,
+.lb-wrapper.active-time .lb-box td {
+    background: #f8d7da !important;
+}
+
+.lb-wrapper.active-123 .lb-box th,
+.lb-wrapper.active-123 .lb-box td {
+    background: #dbeafe !important;
+}
+
+
+
+
+.fb-content {
+    display: flex;
+    justify-content: center;
+}
+
+.fb-content>div {
+    display: flex;
+    justify-content: center;
+    padding: 100% 0;
+}
+
+.fb-card {
+    background-color: #52CD1D;
+    border-radius: 12px;
+    padding: 10px;
+    max-width: 600px;
+}
+
+.fb-form>p, .fb-form>h4{
+    text-align: center;
+}
+
+#feedbackForm>button {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+
+textarea.form-control {
+    resize: none;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+.plslogin>p,
+.plslogin h3 {
+    padding-left: 10px;
+}
+
+
+
+
+
+
+
+.foot {
+    background-color: #53AC2D;
+    border-radius: 0 0 7px 7px;
+    text-align: center;
+    border-top: 1px solid #268626;
+}
+
+/* Rooms Styles */
+
+.rooms-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: flex-start;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    /* Makes card jump if not enough space*/
+}
+
+.rooms-card {
+    width: 330px;
+    border: 1px solid #000000;
+    background-color: #EDF5EE;
+    text-align: left;
+}
+
+/* Title of card*/
+.rooms-card h4 {
+    margin: 0;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-bottom: 1px solid #000000;
+}
+
+/* Horizontal line reset*/
+.rooms-card hr {
+    margin: 0;
+    border: none;
+}
+
+/* Removes ul default stylings*/
+.rooms-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 360px;
+    overflow-y: auto;
+    /* Vertical Scrollbar when max limit*/
+}
+
+/* Styling for each row*/
+.rooms-card li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 15px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #000000;
+}
+
+.rooms-card li:nth-child(odd) {
+    background-color: #DEE7DE;
+}
+
+.rooms-card li:nth-child(even) {
+    background-color: #BECCBE;
+}
+
+/* Username*/
+.rooms-card li span:first-child {
+    overflow: hidden;
+    /* Shrink if not enough space */
+    text-overflow: ellipsis;
+    /* Show ...*/
+    white-space: nowrap;
+    /* Prevent line break */
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.rooms-card li span:nth-child(2) {
+    flex-shrink: 0;
+    /* Doesnt shrink*/
+}
+
+/* Action Buttons Section - Container for Quickplay, Create Room and Join */
+.rooms-actions {
+    display: flex;
+    justify-content: center;
+    /* Center the 3 buttons horizontally */
+    align-items: flex-end;
+    /* Align buttons to the bottom so center can be raised */
+    gap: 230px;
+    margin-top: 60px;
+    margin-bottom: 150px;
+}
+
+/* Center button wrapper - raised above the side buttons */
+.rooms-action-center {
+    margin-bottom: 20px;
+    /* Pushes Create Room higher than side buttons */
+}
+
+/* Side button wrapper - stacks elements vertically (input above button on right side) */
+.rooms-action-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Base style shared by all 3 buttons */
+.rooms-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 6px;
+    background-color: #53AC2D;
+    color: #000000;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    /* Smooth hover transition */
+    font-family: inherit;
+}
+
+/* Slightly darker green on hover */
+.rooms-btn:hover {
+    background-color: #449023;
+}
+
+/* Quickplay Dropdown - relative so the menu positions below the button */
+.rooms-dropdown {
+    position: relative;
+}
+
+/* Hidden dropdown menu, appears below the Quickplay button */
+.rooms-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    /* Below the button + 5px gap */
+    left: 0;
+    width: 100%;
+    /* Same width as the button */
+    background-color: #EDF5EE;
+    border: 1px solid #000000;
+    z-index: 10;
+    /* Stays on top of other elements */
+}
+
+/* Shown when toggled via JavaScript */
+.rooms-dropdown-menu.show {
+    display: block;
+}
+
+/* Individual game mode links inside the dropdown */
+.rooms-dropdown-menu a {
+    display: block;
+    padding: 8px 15px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #000000;
+}
+
+/* Remove border on the last item */
+.rooms-dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+/* Highlight on hover */
+.rooms-dropdown-menu a:hover {
+    background-color: #DEE7DE;
+}
+
+/* Input field for entering a room code */
+.rooms-code-input {
+    padding: 8px 12px;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    font-size: 0.60rem;
+    text-align: center;
+    width: 150px;
+    font-family: inherit;
+}
+
+/* END */
+
+/* Profile Styles */
+
+/* Container that splits main area into left (35%) and right (65%) */
+.profile-split {
+    display: flex;
+    min-height: 90vh;
+}
+
+/* Left panel - green background */
+.profile-left {
+    width: 35%;
+    background-color: #B4FF94;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+/* Right panel - white background */
+.profile-right {
+    width: 65%;
+    background-color: #ffffff;
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* "Profile" title on the left panel */
+.profile-title {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+/* Avatar circle with user initials */
+.profile-avatar {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: #268626;
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+/* Username text below the avatar */
+.profile-username {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.profile-edit-icon {
+    cursor: pointer;
+}
+
+/* "Personal Best" title on the right panel */
+.profile-pb-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+/* Container for the personal best entries */
+.profile-pb-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Each game mode entry */
+.profile-pb-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Game mode name */
+.profile-pb-mode {
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+/* Score value */
+.profile-pb-score {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #268626;
+    margin-left: auto;
+}
+
+/* END */
+
+
+
+
+/* Login and Signup Styles */
+
+.ls-header {
+    height: 80px;
+    font-weight: 900;
+    background-color: #52CD1D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.ls-header a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.ls-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    margin-top: 40px;
+    margin-bottom: 2rem;
+}
+
+.ls-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #52CD1D;
+}
+
+.ls-button {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #268626;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.ls-button:hover {
+    background-color: #1f6d1f;
+}
+
+/* END */
+
+
+/* ---------- CREATE PAGE ---------- */
+
+/* main create page */
+.create-page {
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+/* center content */
+.create-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* title and subtitle alignment */
+.create-container h1,
+.create-subtitle {
+    text-align: center;
+}
+
+/* main title */
+.create-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* subtitle */
+.create-subtitle {
+    margin-bottom: 30px;
+    color: #444;
+}
+
+/* form layout */
+.create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* section box */
+.create-section {
+    background-color: #f3f3f3;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+/* section title */
+.create-section h2 {
+    margin: 0 0 15px 0;
+    font-size: 1.2rem;
+}
+
+/* mode cards container */
+.mode-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* shared box style */
+.mode-card,
+.player-option,
+.privacy-option {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+/* single mode card */
+.mode-card {
+    flex: 1;
+    min-width: 220px;
+    border-radius: 12px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* radio spacing */
+.mode-card input,
+.player-option input {
+    margin-bottom: 8px;
+}
+
+/* selected state */
+.mode-card.active,
+.player-option:has(input:checked),
+.privacy-option:has(input:checked),
+.current-player {
+    border: 2px solid #52CD1D;
+    background-color: #e6f8dd;
+}
+
+/* bold text */
+.mode-title,
+.create-button,
+.friend-search-form button,
+.room-guess-form button,
+.room-chat-form button {
+    font-weight: bold;
+}
+
+/* mode title */
+.mode-title {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+/* mode description */
+.mode-text {
+    display: block;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+/* players grid */
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+/* player option box */
+.player-option {
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+}
+
+/* player option text */
+.player-option span {
+    display: block;
+    font-size: 0.95rem;
+}
+
+/* privacy options layout */
+.privacy-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* privacy option box */
+.privacy-option {
+    border-radius: 10px;
+    padding: 14px 24px;
+}
+
+/* button area */
+.create-button-box {
+    text-align: center;
+}
+
+/* create room button */
+.create-button {
+    background-color: #52CD1D;
+    border: none;
+    padding: 14px 32px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* button hover */
+.create-button:hover {
+    background-color: #46b119;
+}
+
+
+/* ---------- FRIENDS PAGE ---------- */
+
+/* main friends page */
+.friends-page {
+    min-height: 80vh;
+    background-color: #fff;
+    padding: 0;
+}
+
+/* two column layout */
+.friends-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    min-height: 700px;
+}
+
+/* left panel */
+.friends-left {
+    background-color: #b7f07f;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* player name */
+.player-name {
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* spacing under name box */
+.my-name-box {
+    margin-bottom: 120px;
+}
+
+/* labels */
+.my-name-box label,
+.friend-search-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* search input */
+.friend-search-form input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+}
+
+/* search button */
+.friend-search-form button {
+    background-color: #268626;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+/* right panel */
+.friends-right {
+    padding: 30px 40px;
+    box-sizing: border-box;
+}
+
+/* friends title */
+.friends-right h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0 0 30px 0;
+}
+
+/* friends grid */
+.friends-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 50px;
+}
+
+/* friend card */
+.friend-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* friend avatar */
+.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+}
+
+/* friend name */
+.friend-title {
+    font-size: 1.6rem;
+    margin: 0 0 4px 0;
+    font-weight: bold;
+}
+
+/* friend status */
+.friend-status {
+    color: #555;
+}
+
+
+/* ---------- ROOM PAGE ---------- */
+
+/* top bar helper */
+.room-top {
+    position: relative;
+}
+
+/* room code and username position */
+.room-code-inline,
+.room-user-inline {
+    position: absolute;
+    top: 12px;
+    font-weight: 700;
+}
+
+/* room code */
+.room-code-inline {
+    left: 20px;
+}
+
+/* username */
+.room-user-inline {
+    right: 20px;
+}
+
+/* main room page */
+.room-page {
+    padding: 30px 20px;
+    background-color: #fff;
+}
+
+/* mode bar */
+.room-mode-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+/* mode title */
+.room-mode-bar h1 {
+    margin: 0;
+    font-size: 2.8rem;
+}
+
+/* leave room link */
+.leave-room-link {
+    text-decoration: none;
+    color: #8a2f2f;
+    font-weight: bold;
+}
+
+/* 3 column room layout */
+.room-main-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr 260px;
+    gap: 20px;
+    align-items: start;
+}
+
+/* side panels */
+.room-players-panel,
+.room-chat-panel {
+    background-color: #efefef;
+    border: 1px solid #bdbdbd;
+    padding: 15px;
+    min-height: 480px;
+    box-sizing: border-box;
+}
+
+/* panel titles */
+.room-players-panel h2,
+.room-chat-panel h2 {
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+}
+
+/* repeated box style */
+.room-player-card,
+.room-player-profile,
+.room-chat-messages {
+    background-color: #dcdcdc;
+    border: 1px solid #bdbdbd;
+}
+
+/* player card */
+.room-player-card {
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+/* small spacing for text */
+.room-player-card p,
+.room-player-profile p {
+    margin: 4px 0;
+}
+
+/* bold rank and player name */
+.room-player-rank,
+.room-player-profile-name {
+    font-weight: 700;
+}
+
+/* player profile box */
+.room-player-profile {
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* player avatar */
+.room-player-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #c2c2c2;
+    margin: 0 auto 12px auto;
+}
+
+/* words found text */
+.room-player-found {
+    margin: 4px 0;
+}
+
+/* game panel */
+.room-game-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* main word box */
+.room-word-box {
+    background-color: #e7de90;
+    border: 1px solid #c4bb6a;
+    min-height: 460px;
+    padding: 35px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* main word */
+.room-word-box h2 {
+    font-size: 3.2rem;
+    margin: 60px 0 50px 0;
+}
+
+/* answers container */
+.room-answers {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* game mode info */
+.room-mode-info {
+    margin-bottom: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* guess form */
+.room-guess-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* shared input style */
+.room-guess-form input,
+.room-chat-form input {
+    padding: 10px;
+    border: 1px solid #888;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* guess input width */
+.room-guess-form input {
+    width: 280px;
+}
+
+/* shared button style */
+.room-guess-form button,
+.room-chat-form button {
+    border: none;
+    background-color: #52CD1D;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* guess button spacing */
+.room-guess-form button {
+    padding: 10px 20px;
+}
+
+/* score text */
+.room-score-box {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* chat messages area */
+.room-chat-messages {
+    min-height: 360px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* chat messages */
+.room-chat-messages p {
+    margin: 8px 0;
+}
+
+/* chat form */
+.room-chat-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* chat button spacing */
+.room-chat-form button {
+    padding: 10px;
+}
+
+
+@media only screen and (max-width: 540px) {
+    
+    .nophone {
+        display: none;
+    }
+
+    .btn-danger {
+        margin-left: 20px !important;
+    }  
+
+    .btn-primary {
+        margin-right: 20px !important;
+    }
+
+}
+.topauth {}
+
+.footauth {}
+
+
+
+
+
+
+
+@media only screen and (max-width: 540px) {}
