@@ -9,27 +9,26 @@
 </head>
 <body>
 
-    <!-- Layout principal: sidebar left + center + sidebar right-->
-    <div class="page-layout">
-
-        <aside class="page-sidebar"></aside> <!-- Sidebar left -->
-
-        <div class="page-center">
+    <div class="container">
             <!-- Header -->
-            <header class="header-left">
-                <a href="index.html">MATRIOSCA</a>
-
-                <nav class="header-nav">
-                    <a href="createroom.html">Create</a>
+            <header>
+                <div class="top">
+                    <a href="index.html" class="bigword">MATRIOSCA</a>
+                    <a href="login.html" class="authentication">Log In</a>
+                    <a href="signup.html" class="authentication">Sign up</a>
+                </div>
+                <nav class="navegacao">
+                    <a href="profile.html">Profile</a>
                     <a href="friends.html">Friends</a>
+                    <a href="roomlist.html">Rooms</a>
                     <a href="leaderboards.html">Leaderboard</a>
+                    <a href="feedback.html">Feedback</a>
                 </nav>
-
             </header>
 
             <!-- Center -->
-            <main class="page-main" style="text-align: center;">
-                <h3 style = "margin-top: 40px;">Rooms</h3>
+            <main class="page-main whitebg" style="text-align: center; padding-top: 40px; padding-bottom: 40px;">
+                <h3 style="margin-top: 0;">Rooms</h3>
                 <p>Choose a game mode and join a room, or create your own.</p>
 
                 <div class="rooms-container" id="rooms-list">
@@ -68,9 +67,7 @@
                     }
                 </script>
             </main>
-        </div>
-
-        <aside class="page-sidebar"></aside> <!-- Sidebar right -->
+        <footer class="foot">Universidade da Madeira 2025-2026</footer>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

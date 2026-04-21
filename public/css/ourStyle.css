@@ -9,71 +9,15 @@ body {
     background-color: #268626;
 }
 
-/* Page Layout - Side Columns + Center*/
-
-/* Flex container: sidebar + center + sidebar in a row, fills the entire viewport */
-.page-layout {
-    display: flex;
-    min-height: 100vh;
-    background-color: #ffffff;
-}
-
-/* Fixed 150px side columns, do not shrink */
-.page-sidebar {
-    width: 150px;
-    flex-shrink: 0;
-    background-color: #268626;
-}
-
-/* Flexible center column containing header + content stacked vertically */
-.page-center {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
 /* Main content area, expands to fill remaining space */
 .page-main {
     flex: 1;
 }
 
 
-/* Headers */
-
-
 /* para garantir que o header e a navbar está em cima de tudo */
 header {
     z-index: 9999 !important;
-}
-
-/* Header with title aligned left */
-.header-left {
-    height: 80px;
-    background-color: #52CD1D;
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
-    font-weight: 900;
-    padding-left: 4rem;
-}
-
-.header-left a {
-    color: #000000;
-    text-decoration: none;
-}
-
-/* Navigation links pushed to the right side of the header */
-.header-nav {
-    margin-left: auto;
-    padding-right: 14rem;
-    display: flex;
-    gap: 8rem;
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.header-nav a {
-    border: none;
 }
 
 .row {
