@@ -449,6 +449,7 @@ textarea.form-control {
 .rooms-btn {
     display: inline-block;
     padding: 10px 30px;
+    border: none;
     border-radius: 6px;
     background-color: #53AC2D;
     color: #000000;

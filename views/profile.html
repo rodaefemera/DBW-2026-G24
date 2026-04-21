@@ -37,8 +37,8 @@
                     <div class="profile-left">
                         <h2 class="profile-title">Profile</h2>
 
-                        <div class="profile-avatar">JD</div>
-                        <p class="profile-username">JohnDoe <span class="profile-edit-icon">✎</span></p>
+                        <img src="" class="profile-avatar" id="profileIcon" alt="Avatar" style="object-fit: cover;">
+                        <p class="profile-username" id="profileName"><span class="profile-edit-icon">✎</span></p>
                     </div>
 
                     <!-- Right Panel (65%) -->
@@ -48,17 +48,17 @@
                         <div class="profile-pb-list">
                             <div class="profile-pb-item">
                                 <span class="profile-pb-mode">Casual:</span>
-                                <span class="profile-pb-score">1250 PTS</span>
+                                <span class="profile-pb-score" id="scoreCasual"></span>
                             </div>
 
                             <div class="profile-pb-item">
                                 <span class="profile-pb-mode">Time Attack:</span>
-                                <span class="profile-pb-score">3400 PTS</span>
+                                <span class="profile-pb-score" id="scoreTimeAttack"></span>
                             </div>
 
                             <div class="profile-pb-item">
                                 <span class="profile-pb-mode">1st 2 3:</span>
-                                <span class="profile-pb-score">870 PTS</span>
+                                <span class="profile-pb-score" id="scoreFirst23"></span>
                             </div>
                         </div>
                     </div>
@@ -70,9 +70,11 @@
         <aside class="page-sidebar"></aside> <!-- Sidebar right -->
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script src="../public/js/profile.js"></script>
 </body>
 
 </html>
