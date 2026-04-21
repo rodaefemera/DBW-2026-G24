@@ -852,22 +852,20 @@ textarea.form-control {
     position: relative;
 }
 
-/* room code and username position */
-.room-code-inline,
+/* username stays on top right */
 .room-user-inline {
     position: absolute;
     top: 12px;
+    right: 20px;
     font-weight: 700;
 }
 
-/* room code */
+/* room code goes to normal flow (below score) */
 .room-code-inline {
-    left: 20px;
-}
-
-/* username */
-.room-user-inline {
-    right: 20px;
+    position: static;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 700;
 }
 
 /* main room page */
