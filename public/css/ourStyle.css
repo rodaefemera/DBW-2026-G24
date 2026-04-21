@@ -759,12 +759,6 @@ textarea.form-control {
     box-sizing: border-box;
 }
 
-/* player name */
-.player-name {
-    font-weight: bold;
-    margin-bottom: 40px;
-}
-
 /* spacing under name box */
 .my-name-box {
     margin-bottom: 120px;
