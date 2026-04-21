@@ -1078,6 +1078,11 @@ textarea.form-control {
     padding: 10px;
 }
 
+.current-player {
+    border: 2px solid #52CD1D;
+    background-color: #e6f8dd;
+}
+
 
 @media only screen and (max-width: 540px) {
     
