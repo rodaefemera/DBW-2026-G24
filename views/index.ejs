@@ -1,28 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link href="../public/css/ourStyle.css" rel="stylesheet">
-    <title>MATRIOSCA</title>
-</head>
+<%- include('partials/head') %>
 <body>
     <div class="container">
-        <header>
-            <div class="top">
-                <a href="index.html" class="bigword">MATRIOSCA</a>
-                <a href="login.html" class="authentication">Log In</a>
-                <a href="signup.html" class="authentication">Sign up</a>
-            </div>
-            <nav class="navegacao">
-                <a href="profile.html">Profile</a>
-                <a href="friends.html">Friends</a>
-                <a href="roomlist.html">Rooms</a>
-                <a href="leaderboards.html">Leaderboard</a>
-                <a href="feedback.html">Feedback</a>
-            </nav>
-        </header>
+        <%- include('partials/header') %>
 
         <div class="graybg plslogin">
                 <h3>Uh oh!</h3>
@@ -36,17 +17,17 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-4 nophone"></div>
                 <div class="col-12 col-md-6 col-lg-4 butt-div">
-                    <a href="roombase.html?mode=casual" class="btn bigbutt btn-warning">CASUAL</a>
+                    <a href="/roombase?mode=casual" class="btn bigbutt btn-warning">CASUAL</a>
                     <p>No scores, just get as many words as you can every so often until the word changes. Good to get started or just chill!</p>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 nophone"></div>
                 <div class="col-12 col-md-6 col-lg-4 butt-div">
-                    <a href="roombase.html?mode=time_attack" class="btn bigbutt btn-danger">TIME ATTACK</a>
+                    <a href="/roombase?mode=time_attack" class="btn bigbutt btn-danger">TIME ATTACK</a>
                     <p>A race against the clock! Whoever can get the most words within the time limit wins.</p>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 nophone"></div>
                 <div class="col-12 col-md-6 col-lg-4 butt-div">
-                    <a href="roombase.html?mode=first_to_3" class="btn bigbutt btn-primary">1ST 2 3</a>
+                    <a href="/roombase?mode=first_to_3" class="btn bigbutt btn-primary">1ST 2 3</a>
                     <p>A true competition, a race for who can find enough words. The first to reach the designated amount of words wins.</p>
                 </div>
             </div>
@@ -85,7 +66,7 @@
                             <span class="fs-3 fw-bold">2</span>
                         </div>
                         <h4 class="fw-bold mb-3">Peel the Layers</h4>
-                        <p class="text-muted">Find smaller words hidden inside the main word. Golden Rule: The letters must appear in the exact direct or indirect sequence.</p>
+                        <p class="text-muted">Find smaller words hidden inside the main word. Golden Rule: The letters must appear in the exact direct or indirect sequence.</p>
                     </div>
                 </div>
                 <div class="col-12 col-lg-4">
@@ -102,7 +83,7 @@
                 <div class="col-12 text-center mt-5">
                     <h2 class="display-4 fw-bold mb-3">READY TO PLAY?</h2>
                     <p class="lead mb-4">Join an active lobby or create your own custom game.</p>
-                    <a href="roomlist.html" class="btn btn-success btn-lg bigbutt">ROOMS</a>
+                    <a href="/roomlist" class="btn btn-success btn-lg bigbutt">ROOMS</a>
                 </div>
             </div>
 
@@ -111,7 +92,7 @@
 
 
 
-        <footer class="foot">Universidade da Madeira 2025-2026</footer>
+        <%- include('partials/footer') %>
     </div>
 
 

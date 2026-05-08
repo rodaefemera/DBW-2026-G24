@@ -1,30 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link href="../public/css/ourStyle.css" rel="stylesheet">
-    <title>MATRIOSCA</title>
-</head>
+<%- include('partials/head') %>
 <body>
 
     <div class="container">
-            <!-- Header -->
-            <header>
-                <div class="top">
-                    <a href="index.html" class="bigword">MATRIOSCA</a>
-                    <a href="login.html" class="authentication">Log In</a>
-                    <a href="signup.html" class="authentication">Sign up</a>
-                </div>
-                <nav class="navegacao">
-                    <a href="profile.html">Profile</a>
-                    <a href="friends.html">Friends</a>
-                    <a href="roomlist.html">Rooms</a>
-                    <a href="leaderboards.html">Leaderboard</a>
-                    <a href="feedback.html">Feedback</a>
-                </nav>
-            </header>
+            <%- include('partials/header') %>
 
             <!-- Center -->
             <main class="page-main whitebg text-center py-4">
@@ -41,16 +21,16 @@
                         <div class="rooms-dropdown">
                             <button class="rooms-btn rooms-dropdown-btn" onclick="toggleDropdown()"> Quickplay ⏷ </button>
                             <div class="rooms-dropdown-menu" id="quickplayMenu">
-                                <a href="roombase.html?mode=casual">Casual</a>
-                                <a href="roombase.html?mode=time_attack">Time Attack</a>
-                                <a href="roombase.html?mode=first_to_3">1st 2 3</a>
+                                <a href="/roombase?mode=casual">Casual</a>
+                                <a href="/roombase?mode=time_attack">Time Attack</a>
+                                <a href="/roombase?mode=first_to_3">1st 2 3</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Create Room (center) -->
                     <div class="col-12 col-md-4 d-flex justify-content-center">
-                        <a href="createroom.html" class="rooms-btn rooms-create-btn">Create Room</a>
+                        <a href="/createroom" class="rooms-btn rooms-create-btn">Create Room</a>
                     </div>
 
                     <!-- Join by Code (right) -->
@@ -67,11 +47,11 @@
                     }
                 </script>
             </main>
-        <footer class="foot">Universidade da Madeira 2025-2026</footer>
+        <%- include('partials/footer') %>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="../public/js/rooms.js"></script>
+    <script src="/js/rooms.js"></script>
 </body>
 </html>
