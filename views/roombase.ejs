@@ -1,100 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link href="../public/css/ourStyle.css" rel="stylesheet">
-    <title>MATRIOSCA</title>
-</head>
+<%- include('partials/head') %>
 <body>
     <div class="container">
         <header>
             <div class="top room-top">
-                <a href="index.html" class="bigword">MATRIOSCA</a>
+                <a href="/" class="bigword">MATRIOSCA</a>
                 <span class="room-user-inline">[nome utilizador]</span>
             </div>
-
             <nav class="navegacao">
-                <a href="profile.html">Profile</a>
-                <a href="friends.html">Friends</a>
-                <a href="roomlist.html">Rooms</a>
-                <a href="leaderboards.html">Leaderboard</a>
-                <a href="feedback.html">Feedback</a>
+                <a href="/profile">Profile</a>
+                <a href="/friends">Friends</a>
+                <a href="/roomlist">Rooms</a>
+                <a href="/leaderboards">Leaderboard</a>
+                <a href="/feedback">Feedback</a>
             </nav>
         </header>
 
         <main class="room-page">
-
-            <!-- game mode title and leave room link -->
             <section class="room-mode-bar">
                 <h1 id="gameMode">Time Attack</h1>
-                <a href="roomlist.html" class="leave-room-link">Leave Room</a>
+                <a href="/roomlist" class="leave-room-link">Leave Room</a>
             </section>
-
-            <!-- main room layout -->
             <section class="room-main-layout">
-
                 <aside class="room-players-panel">
                     <h2>Players</h2>
-
-                    <!-- *players list will be inserted here* -->
                     <div id="playersList"></div>
                 </aside>
-
-                <!-- game panel -->
                 <section class="room-game-panel">
                     <div class="room-word-box">
                         <h2 id="mainWord">PALAVRA</h2>
-
                         <div id="answersList" class="room-answers"></div>
-
                         <div class="room-mode-info">
                             <p id="modeInfo">Tempo restante: 60s</p>
                         </div>
-
-                        <!-- form to send guesses -->
                         <form action="/guess" method="POST" id="guessForm" class="room-guess-form">
                             <input type="text" name="guess" id="guessInput" placeholder="Type ur guess here.." required>
                             <button type="submit">Send</button>
                         </form>
                     </div>
-
                     <div class="room-score-box">
                         <p id="scoreText">Score: 100 Points</p>
                     </div>
-                    
                     <div class="room-code-inline">
                         Room Code: #XYZ-123
                     </div>
-                    
                 </section>
-
-                <!-- chat panel -->
                 <aside class="room-chat-panel">
                     <h2>chat</h2>
-
                     <div id="chatBox" class="room-chat-messages">
                         <p>[username]: hello</p>
                         <p>[username2]: hello2</p>
                     </div>
-
-                    <!-- form to send chat messages -->
                     <form action="/chat" method="POST" id="chatForm" class="room-chat-form">
                         <input type="text" name="message" id="chatInput" placeholder="Chat here.." required>
                         <button type="submit">Send</button>
                     </form>
                 </aside>
-
             </section>
         </main>
-
-        <footer class="foot">Universidade da Madeira 2025-2026</footer>
+        <%- include('partials/footer') %>
     </div>
-
-    <!-- link to roombase JS -->
-    <script src="../public/js/roombase.js"></script>
-
+    <script src="/js/roombase.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
