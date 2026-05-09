@@ -1,21 +1,22 @@
 'use strict';
 
+const form = document.querySelector('form');
 const loginButton = document.querySelector('button[type="submit"]');
 
 loginButton.addEventListener('click', function(event) {
     event.preventDefault();
 
-    const emailInput = document.getElementById('email');
+    const usernameInput = document.getElementById('username');
     const passwordInput = document.getElementById('password');
 
     let isValid = true;
 
-    if (emailInput.value.trim() !== "") {
-        emailInput.classList.remove('is-invalid');
-        emailInput.classList.add('is-valid');
+    if (usernameInput.value.trim() !== "") {
+        usernameInput.classList.remove('is-invalid');
+        usernameInput.classList.add('is-valid');
     } else {
-        emailInput.classList.remove('is-valid');
-        emailInput.classList.add('is-invalid');
+        usernameInput.classList.remove('is-valid');
+        usernameInput.classList.add('is-invalid');
         isValid = false;
     }
 
@@ -29,13 +30,6 @@ loginButton.addEventListener('click', function(event) {
     }
 
     if (isValid) {
-        const userEmail = emailInput.value.trim();
-        console.log(`Success! The entered email was: ${userEmail}`);
-        
-        emailInput.value = "";
-        passwordInput.value = "";
-        
-        emailInput.classList.remove('is-valid');
-        passwordInput.classList.remove('is-valid');
+        form.submit();
     }
 });

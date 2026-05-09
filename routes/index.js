@@ -1,7 +1,8 @@
 // Definição das rotas URL e métodos HTTP
-import express from 'express';
+const express = require('express');
 const router = express.Router();
-import {
+
+const {
     renderIndex,
     renderLogin,
     renderSignup,
@@ -12,7 +13,9 @@ import {
     renderRoombase,
     renderLeaderboards,
     renderFeedback,
-} from '../controllers/indexController.js';
+} = require('../controllers/indexController');
+
+const { postSignup, postLogin, getLogout } = require('../controllers/authController');
 
 // Rotas GET para cada página
 router.get('/', renderIndex);
@@ -26,4 +29,9 @@ router.get('/roombase', renderRoombase);
 router.get('/leaderboards', renderLeaderboards);
 router.get('/feedback', renderFeedback);
 
-export default router;
+// Rotas de autenticação
+router.post('/signup', postSignup);
+router.post('/login', postLogin);
+router.get('/logout', getLogout);
+
+module.exports = router;
