@@ -1,8 +1,13 @@
 <header>
     <div class="top">
         <a href="/" class="bigword">MATRIOSCA</a>
-        <a href="/login" class="authentication">Log In</a>
-        <a href="/signup" class="authentication">Sign up</a>
+        <% if (typeof currentUser !== 'undefined' && currentUser) { %>
+            <a href="/logout" class="authentication">Log Out</a>
+            <span class="authentication"><%= currentUser.username %></span>
+        <% } else { %>
+            <a href="/login" class="authentication">Log In</a>
+            <a href="/signup" class="authentication">Sign up</a>
+        <% } %>
     </div>
     <nav class="navegacao">
         <a href="/profile">Profile</a>

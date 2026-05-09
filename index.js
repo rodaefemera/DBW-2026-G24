@@ -1,21 +1,51 @@
-import express from "express"; // importação do pacote express em syntax module
+require('dotenv').config();
+const express = require('express');
+const path = require('path');
+const session = require('express-session');
+const passport = require('passport');
+const methodOverride = require('method-override');
+const connectDB = require('./config/db');
+const User = require('./models/User');
+
+// Ligar à base de dados
+connectDB();
+
 const app = express();
-import path from 'path'; // Importa o módulo 'path' do Node.js para lidar com caminhos de ficheiros e diretórios.
-import { fileURLToPath } from 'url'; // Importa a função 'fileURLToPath' do módulo 'url' para converter URLs de ficheiro em caminhos de ficheiro.
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename); // apanha o diretório de execução do ficheiro
 
-app.set("view engine", "ejs"); //método para configurar a nossa view engine para "ejs"
-app.use(express.static(__dirname + "/public")); //é uma função middleware no framework Express.js para Node.js que serve arquivos estáticos, como imagens, arquivos CSS e JavaScript.
-app.use(express.urlencoded({ extended: true })); //é uma função middleware do Express.js que é usada para analisar dados de formulários HTML que são enviados para o servidor.
+// View engine e middlewares
+app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
-// Importação e uso das rotas
-import indexRoutes from './routes/index.js';
+// Sessões
+app.use(session({
+    secret: 'matriosca-secret-key',
+    resave: false,
+    saveUninitialized: false,
+}));
+
+// Passport
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// Passar o user a todas as views automaticamente
+app.use((req, res, next) => {
+    res.locals.currentUser = req.user;
+    next();
+});
+
+// Rotas
+const indexRoutes = require('./routes/index');
 app.use('/', indexRoutes);
 
+// Iniciar servidor
 app.listen(3000, (err) => {
     if (err)
         console.error(err);
     else
-        console.log("Server listening on PORT", 3000);
+        console.log('Server listening on PORT', 3000);
 });

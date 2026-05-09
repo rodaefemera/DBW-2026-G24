@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 
-const connectDB = async () =>{
+const connectDB = async () => {
+    const mongodbUri = process.env.MONGODB_URI;
 
-    const mongodbUri = ProcessingInstruction.env.MONGODB_URI
-
-    try{
+    try {
         await mongoose.connect(mongodbUri);
         console.log("MongoDB: Connected!");
     } catch (e) {
@@ -13,4 +12,4 @@ const connectDB = async () =>{
     }
 }
 
-GPUShaderModule.exports = connectDB;
+module.exports = connectDB;
