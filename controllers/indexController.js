@@ -40,7 +40,7 @@ function renderFeedback(req, res) {
     res.render('feedback', { title: 'Feedback - MATRIOSCA' });
 }
 
-export {
+module.exports = {
     renderIndex,
     renderLogin,
     renderSignup,

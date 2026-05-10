@@ -1,5 +1,6 @@
 'use strict';
 
+const form = document.querySelector('form');
 const signupButton = document.querySelector('button[type="submit"]');
 
 signupButton.addEventListener('click', function(event) {
@@ -48,18 +49,16 @@ signupButton.addEventListener('click', function(event) {
         isValid = false;
     }
 
-    if (isValid) {
-        const username = usernameInput.value.trim();
-        console.log(`Success! The registered user was: ${username}`);
-
-        usernameInput.value = "";
-        emailInput.value = "";
-        passwordInput.value = "";
-        confirmPasswordInput.value = "";
-
-        usernameInput.classList.remove('is-valid');
-        emailInput.classList.remove('is-valid');
+    // Verificar se as passwords coincidem
+    if (isValid && passwordInput.value !== confirmPasswordInput.value) {
         passwordInput.classList.remove('is-valid');
+        passwordInput.classList.add('is-invalid');
         confirmPasswordInput.classList.remove('is-valid');
+        confirmPasswordInput.classList.add('is-invalid');
+        isValid = false;
+    }
+
+    if (isValid) {
+        form.submit();
     }
 });
