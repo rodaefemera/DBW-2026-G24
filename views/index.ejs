@@ -5,10 +5,7 @@
     <div class="container">
         <%- include('partials/header') %>
 
-        <div class="graybg plslogin">
-                <h3>Uh oh!</h3>
-                <p>It seems like you currently aren't logged into an account! You may still be able to play the Casual gamemode, but you will need an account to play the rest so that your score can be properly registered! Please sign up or log into your account on the <b>top right corner</b>.</p>
-        </div>
+        <%- include('partials/nologin') %>
 
         <section class="whitebg">
             <div>
@@ -46,7 +43,7 @@
             </div>
         </section>
 
-        <section class="whitebg">
+        <section class="whitebg tutorial">
             <div class="row">
                 <div class="col-12 text-center mb-5">
                     <h2 class="display-4 fw-bold mb-3">HOW TO PLAY</h2>
