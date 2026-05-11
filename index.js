@@ -7,18 +7,18 @@ const methodOverride = require('method-override');
 const connectDB = require('./config/db');
 const User = require('./models/User');
 
-// Ligar à base de dados
+// Connect to the database
 connectDB();
 
 const app = express();
 
-// View engine e middlewares
+// View engine and middleware
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
-// Sessões
+// Sessions
 app.use(session({
     secret: 'matriosca-secret-key',
     resave: false,
@@ -32,17 +32,17 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// Passar o user a todas as views automaticamente
+// Automatically pass the user object to all views
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;
     next();
 });
 
-// Rotas
+// Routes
 const indexRoutes = require('./routes/index');
 app.use('/', indexRoutes);
 
-// Iniciar servidor
+// Start the server
 app.listen(3000, (err) => {
     if (err)
         console.error(err);

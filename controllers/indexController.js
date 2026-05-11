@@ -1,4 +1,4 @@
-// Controller responsável por fazer a ponte entre os dados e as views
+// Controller responsible for bridging data and views
 
 function renderIndex(req, res) {
     res.render('index', { title: 'MATRIOSCA' });
@@ -24,11 +24,19 @@ function renderRoomlist(req, res) {
     res.render('roomlist', { title: 'Rooms - MATRIOSCA' });
 }
 
+// Redirect to login if not authenticated
 function renderCreateroom(req, res) {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
     res.render('createroom', { title: 'Create Room - MATRIOSCA' });
 }
 
+// Redirect to login if not authenticated
 function renderRoombase(req, res) {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
     res.render('roombase', { title: 'Room - MATRIOSCA' });
 }
 
