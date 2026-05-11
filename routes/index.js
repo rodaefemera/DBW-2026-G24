@@ -1,4 +1,4 @@
-// Definição das rotas URL e métodos HTTP
+// Define URL routes and HTTP methods
 const express = require('express');
 const router = express.Router();
 
@@ -17,7 +17,7 @@ const {
 
 const { postSignup, postLogin, getLogout } = require('../controllers/authController');
 
-// Rotas GET para cada página
+// GET routes for each page
 router.get('/', renderIndex);
 router.get('/login', renderLogin);
 router.get('/signup', renderSignup);
@@ -29,7 +29,7 @@ router.get('/roombase', renderRoombase);
 router.get('/leaderboards', renderLeaderboards);
 router.get('/feedback', renderFeedback);
 
-// Rotas de autenticação
+// Authentication routes
 router.post('/signup', postSignup);
 router.post('/login', postLogin);
 router.get('/logout', getLogout);

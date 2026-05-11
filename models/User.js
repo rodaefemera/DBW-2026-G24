@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
 });
 
-// Adiciona automaticamente os campos username, hash e salt
+// Automatically add username, hash, and salt fields
 userSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('User', userSchema);

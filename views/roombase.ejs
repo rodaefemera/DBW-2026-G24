@@ -6,7 +6,12 @@
         <header>
             <div class="top room-top">
                 <a href="/" class="bigword">MATRIOSCA</a>
-                <span class="room-user-inline">[nome utilizador]</span>
+                <% if (typeof currentUser !== 'undefined' && currentUser) { %>
+                    <span class="room-user-inline"><%= currentUser.username %></span>
+                <% } else { %>
+                    <a href="/login" class="authentication">Log In</a>
+                    <a href="/signup" class="authentication">Sign up</a>
+                <% } %>
             </div>
             <nav class="navegacao">
                 <a href="/profile">Profile</a>
