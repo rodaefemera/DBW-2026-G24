@@ -29,9 +29,14 @@ router.get('/roombase', renderRoombase);
 router.get('/leaderboards', renderLeaderboards);
 router.get('/feedback', renderFeedback);
 
+const { updateProfilePic } = require('../controllers/profileController');
+
 // Authentication routes
 router.post('/signup', postSignup);
 router.post('/login', postLogin);
 router.get('/logout', getLogout);
+
+// Profile actions
+router.patch('/profile', updateProfilePic);
 
 module.exports = router;

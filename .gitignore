@@ -12,3 +12,4 @@ Mercury.modules
 *.d
 *.c_date
 .env
+node_modules/
