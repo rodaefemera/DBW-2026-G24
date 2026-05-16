@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-PT">
 <%- include('partials/head') %>
-<body>
-    <div class="container noscroll">
         <%- include('partials/header') %>
+        <%- include('partials/nologin') %>
 
-        <% if (typeof currentUser !== 'undefined' && currentUser) { %>
         <section class="whitebg lb-content">
             <div class="col-10 col-md-10 col-lg-8">
-                <div class="lb-wrapper active-time">
+                <div class="lb-wrapper <%= mode === '123' ? 'active-123' : 'active-time' %>">
                     <div class="lb-tabs">
-                        <div class="lb-tab tab-time active" onclick="switchMode('time')">TIME ATTACK</div>
-                        <div class="lb-tab tab-123" onclick="switchMode('123')">1ST 2 3</div>
+                        <div class="lb-tab tab-time <%= mode === 'time' ? 'active' : '' %>">
+                            <a href="/leaderboards?mode=time">TIME ATTACK</a>
+                        </div>
+                        <div class="lb-tab tab-123 <%= mode === '123' ? 'active' : '' %>">
+                            <a href="/leaderboards?mode=123">1ST 2 3</a>
+                        </div>
                     </div>
                     <div class="lb-box">
                         <table class="table">
@@ -22,7 +22,19 @@
                                     <th>Score</th>
                                 </tr>
                             </thead>
-                            <tbody id="leaderboard-body"></tbody>
+                            <tbody id="leaderboard-body">
+                                <% users.forEach((user, index) => { %>
+                                    <tr>
+                                        <td>#<%= index + 1 %></td>
+                                        <td>
+                                            <a href="/profile/<%= user._id %>" style="text-decoration: none; color: inherit;">
+                                                <%= user.username %>
+                                            </a>
+                                        </td>
+                                        <td><%= mode === '123' ? user.score123 : user.scoreTime %></td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -42,6 +54,5 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="/js/leaderboard.js"></script>
 </body>
 </html>

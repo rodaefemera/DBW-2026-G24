@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-PT">
 <%- include('partials/head') %>
-<body>
-    <div class="container">
         <%- include('partials/header') %>
 
+        <%- include('partials/nologin') %>
         <!-- Login required modal -->
         <div class="login-modal-overlay" id="loginModal" style="display: none;" onclick="if(event.target===this) closeLoginModal()">
             <div class="login-modal">
@@ -66,7 +63,7 @@
             </div>
         </section>
 
-        <section class="whitebg">
+        <section class="whitebg tutorial">
             <div class="row">
                 <div class="col-12 text-center mb-5">
                     <h2 class="display-4 fw-bold mb-3">HOW TO PLAY</h2>

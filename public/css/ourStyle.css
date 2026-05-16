@@ -117,6 +117,9 @@ nav>a:active {
 }
 
 
+.tutorial.row.div
+
+
 
 
 
@@ -154,7 +157,7 @@ nav>a:active {
     flex-shrink: 0;
 }
 
-.lb-tab {
+.lb-tab a {
     width: 50%;
     text-align: center;
     padding: 10px 0;
@@ -164,11 +167,11 @@ nav>a:active {
     color: white;
 }
 
-.lb-tab:hover {
+.lb-tab a:hover {
     color: black;
 }
 
-.lb-tab:active {
+.lb-tab a:active {
     color: white;
 }
 
