@@ -49,7 +49,7 @@ signupButton.addEventListener('click', function(event) {
         isValid = false;
     }
 
-    // Verificar se as passwords coincidem
+    // Check if passwords match
     if (isValid && passwordInput.value !== confirmPasswordInput.value) {
         passwordInput.classList.remove('is-valid');
         passwordInput.classList.add('is-invalid');

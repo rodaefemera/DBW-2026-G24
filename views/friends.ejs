@@ -1,6 +1,7 @@
 <%- include('partials/head') %>
         <%- include('partials/header') %>
 
+        <% if (typeof currentUser !== 'undefined' && currentUser) { %>
         <main class="friends-page">
             <section class="friends-layout">
 
@@ -9,7 +10,7 @@
 
                     <div class="my-name-box">
                         <label for="myName">Teu nome:</label>
-                        <p id="myName">[nome utilizador]</p>
+                        <p id="myName"><%= currentUser.username %></p>
                     </div>
 
                     <!-- form to add a new friend -->
@@ -43,6 +44,14 @@
 
             </section>
         </main>
+        <% } else { %>
+        <main class="friends-page">
+            <div class="auth-required-msg">
+                <h3>🔒 Login Required</h3>
+                <p>Please <a href="/login">log in</a> or <a href="/signup">sign up</a> to see your friends list.</p>
+            </div>
+        </main>
+        <% } %>
 
         <%- include('partials/footer') %>
 

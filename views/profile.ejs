@@ -1,6 +1,7 @@
 <%- include('partials/head') %>
             <%- include('partials/header') %>
 
+            <% if (typeof currentUser !== 'undefined' && currentUser) { %>
             <!-- Center -->
             <main class="page-main whitebg">
                 <div class="row g-0">
@@ -9,7 +10,7 @@
                     <div class="col-12 col-lg-4 profile-left d-flex flex-column align-items-center py-5">
                         <h2 class="profile-title">Profile</h2>
 
-                        <<img src="<%= currentUser.profilePic || 'https://via.placeholder.com/150' %>" class="profile-avatar" id="profileIcon" alt="Avatar" style="object-fit: cover; width: 150px; height: 150px; border-radius: 50%;">
+                        <img src="<%= currentUser.profilePic || 'https://via.placeholder.com/150' %>" class="profile-avatar" id="profileIcon" alt="Avatar" style="object-fit: cover; width: 150px; height: 150px; border-radius: 50%;">
                         <p class="profile-username" id="profileName"><%= currentUser.username %></p>
                         
                         <form action="/profile?_method=PATCH" method="POST" class="mt-3 w-100 px-4">
@@ -39,6 +40,14 @@
 
                 </div>
             </main>
+            <% } else { %>
+            <main class="page-main whitebg">
+                <div class="auth-required-msg">
+                    <h3>🔒 Login Required</h3>
+                    <p>Please <a href="/login">log in</a> or <a href="/signup">sign up</a> to view your profile and statistics.</p>
+                </div>
+            </main>
+            <% } %>
         <%- include('partials/footer') %>
     </div>
 

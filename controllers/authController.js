@@ -1,7 +1,7 @@
 const User = require('../models/userModel');
 const passport = require('passport');
 
-// POST /signup — regista um novo utilizador e faz login automático
+// POST /signup — register a new user and automatically log them in
 function postSignup(req, res) {
     const { username, email, password } = req.body;
 
@@ -18,13 +18,13 @@ function postSignup(req, res) {
     });
 }
 
-// POST /login — autentica o utilizador
+// POST /login — authenticate the user
 const postLogin = passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login',
 });
 
-// GET /logout — termina a sessão
+// GET /logout — end the session
 function getLogout(req, res) {
     req.logout((err) => {
         if (err) {

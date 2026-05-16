@@ -15,7 +15,7 @@ body {
 }
 
 
-/* para garantir que o header e a navbar está em cima de tudo */
+/* ensure header and navbar stay on top */
 header {
     z-index: 9999 !important;
 }
@@ -145,7 +145,7 @@ nav>a:active {
     align-items: center;
 }
 
-.lb-content>div {
+.lb-content > .col-10 {
     height: 100%;
     display: flex;
     align-items: center;
@@ -241,7 +241,7 @@ nav>a:active {
     justify-content: center;
 }
 
-.fb-content>div {
+.fb-content > .col-10 {
     display: flex;
     justify-content: center;
     padding: 100% 0;
@@ -273,6 +273,83 @@ textarea.form-control {
 .plslogin>p,
 .plslogin h3 {
     padding-left: 10px;
+}
+
+/* Login required message */
+.auth-required-msg {
+    text-align: center;
+    padding: 80px 30px;
+    min-height: 300px;
+    flex-direction: column;
+}
+
+.auth-required-msg a {
+    color: #268626;
+    font-weight: 700;
+}
+
+/* Login modal */
+.login-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.login-modal {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px 30px;
+    text-align: center;
+    max-width: 340px;
+    width: 90%;
+}
+
+.login-modal h4 {
+    margin-bottom: 10px;
+}
+
+.login-modal p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.login-modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.login-modal-btn {
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.login-modal-login {
+    background-color: #52CD1D;
+    color: #000;
+}
+
+.login-modal-signup {
+    background-color: #268626;
+    color: #fff;
+}
+
+.login-modal-close {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 
