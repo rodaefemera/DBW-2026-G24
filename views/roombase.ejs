@@ -8,7 +8,7 @@
             </section>
             <section class="room-main-layout">
                 <aside class="room-players-panel">
-                    <h2>Players</h2>
+                    <h2>Players <span id="playerCount"></span></h2>
                     <div id="playersList"></div>
                 </aside>
                 <section class="room-game-panel">
@@ -23,19 +23,13 @@
                             <button type="submit">Send</button>
                         </form>
                     </div>
-                    <div class="room-score-box">
-                        <p id="scoreText">Score: 100 Points</p>
-                    </div>
-                    <div class="room-code-inline">
+                    <div class="room-code-inline" id="roomCodeDisplay">
                         Room Code: #XYZ-123
                     </div>
                 </section>
                 <aside class="room-chat-panel">
                     <h2>chat</h2>
-                    <div id="chatBox" class="room-chat-messages">
-                        <p>[username]: hello</p>
-                        <p>[username2]: hello2</p>
-                    </div>
+                    <div id="chatBox" class="room-chat-messages"></div>
                     <form action="/chat" method="POST" id="chatForm" class="room-chat-form">
                         <input type="text" name="message" id="chatInput" placeholder="Chat here.." required>
                         <button type="submit">Send</button>
@@ -45,6 +39,7 @@
         </main>
         <%- include('partials/footer') %>
     </div>
+	<script src="/socket.io/socket.io.js"></script>
     <script src="/js/roombase.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
