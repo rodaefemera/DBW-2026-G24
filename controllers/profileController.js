@@ -15,10 +15,6 @@ const renderUserProfile = async (req, res, next) => {
 };
 
 const renderOwnProfile = (req, res, next) => {
-    if (!req.isAuthenticated()) {
-        return res.redirect('/login');
-    }
-
     // Redireciona para o perfil desse utilizador via ID
     res.redirect(`/profile/${req.user._id}`);
 };

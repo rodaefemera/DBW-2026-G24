@@ -1,7 +1,6 @@
 <%- include('partials/head') %>
         <%- include('partials/header') %>
 
-        <% if (typeof currentUser !== 'undefined' && currentUser) { %>
         <section class="whitebg lb-content">
             <div class="col-10 col-md-10 col-lg-8">
                 <div class="lb-wrapper <%= mode === '123' ? 'active-123' : 'active-time' %>">
@@ -40,14 +39,6 @@
                 </div>
             </div>
         </section>
-        <% } else { %>
-        <section class="whitebg lb-content">
-            <div class="auth-required-msg">
-                <h3>🔒 Login Required</h3>
-                <p>Please <a href="/login">log in</a> or <a href="/signup">sign up</a> to view the leaderboard.</p>
-            </div>
-        </section>
-        <% } %>
 
         <%- include('partials/footer') %>
     </div>

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { ensureAuthenticated } = require('../middleware/authMiddleware');
 const { 
         renderUserProfile,
         updateProfilePic,
@@ -7,7 +8,7 @@ const {
     } = require('../controllers/profileController');
 
 router.get('/profile/:id', renderUserProfile);
-router.patch('/profile', updateProfilePic);
-router.get('/profile', renderOwnProfile);
+router.patch('/profile', ensureAuthenticated, updateProfilePic);
+router.get('/profile', ensureAuthenticated, renderOwnProfile);
 
 module.exports = router;

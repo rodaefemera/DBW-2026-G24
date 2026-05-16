@@ -1,7 +1,6 @@
 <%- include('partials/head') %>
         <%- include('partials/header') %>
 
-        <% if (typeof currentUser !== 'undefined' && currentUser) { %>
         <section class="whitebg fb-content">
             <div class="col-10 col-md-10 col-lg-8">
                 <div class="fb-card">
@@ -23,14 +22,6 @@
                 </div>
             </div>
         </section>
-        <% } else { %>
-        <section class="whitebg fb-content">
-            <div class="auth-required-msg">
-                <h3>🔒 Login Required</h3>
-                <p>Please <a href="/login">log in</a> or <a href="/signup">sign up</a> to send feedback.</p>
-            </div>
-        </section>
-        <% } %>
 
         <%- include('partials/footer') %>
     </div>
