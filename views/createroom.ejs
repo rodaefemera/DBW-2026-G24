@@ -1,0 +1,63 @@
+<%- include('partials/head') %>
+        <%- include('partials/header') %>
+
+        <main class="create-page">
+            <section class="create-container">
+                <h1>Create room</h1>
+                <p class="create-subtitle">Set up your lobby rules and invite other players.</p>
+                <form id="createRoomForm" class="create-form">
+                    <div class="create-section">
+                        <h2>Game mode</h2>
+                        <div class="mode-cards">
+                            <label class="mode-card">
+                                <input type="radio" name="gameMode" value="casual" checked>
+                                <span class="mode-title">Casual</span>
+                                <span class="mode-text">Discover words without a time limit.</span>
+                            </label>
+                            <label class="mode-card">
+                                <input type="radio" name="gameMode" value="time_attack">
+                                <span class="mode-title">Time Attack</span>
+                                <span class="mode-text">Find as many words as possible in 60 seconds.</span>
+                            </label>
+                            <label class="mode-card">
+                                <input type="radio" name="gameMode" value="first_to_3">
+                                <span class="mode-title">1st 2 3</span>
+                                <span class="mode-text">The first to guess 3 words wins the round.</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="create-section">
+                        <h2>Player Limit (Máx. 20)</h2>
+                        <div class="player-grid">
+                            <label class="player-option"><input type="radio" name="playersLimit" value="1" checked><span>1 Player</span></label>
+                            <label class="player-option"><input type="radio" name="playersLimit" value="2"><span>2 Players</span></label>
+                            <label class="player-option"><input type="radio" name="playersLimit" value="4"><span>4 Players</span></label>
+                            <label class="player-option"><input type="radio" name="playersLimit" value="6"><span>6 Players</span></label>
+                            <label class="player-option"><input type="radio" name="playersLimit" value="8"><span>8 Players</span></label>
+                            <label class="player-option"><input type="radio" name="playersLimit" value="10"><span>10 Players</span></label>
+                            <label class="player-option"><input type="radio" name="playersLimit" value="12"><span>12 Players</span></label>
+                            <label class="player-option"><input type="radio" name="playersLimit" value="14"><span>14 Players</span></label>
+                            <label class="player-option"><input type="radio" name="playersLimit" value="16"><span>16 Players</span></label>
+                            <label class="player-option"><input type="radio" name="playersLimit" value="18"><span>18 Players</span></label>
+                            <label class="player-option"><input type="radio" name="playersLimit" value="20"><span>20 Players</span></label>
+                        </div>
+                    </div>
+                    <div class="create-section">
+                        <h2>Privacy</h2>
+                        <div class="privacy-options">
+                            <label class="privacy-option"><input type="radio" name="privacy" value="public" checked><span>Public</span></label>
+                            <label class="privacy-option"><input type="radio" name="privacy" value="private"><span>Private</span></label>
+                        </div>
+                    </div>
+                    <div class="create-button-box">
+                        <button type="submit" class="create-button">Create Room</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <%- include('partials/footer') %>
+    </div>
+    <script src="/js/createroom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

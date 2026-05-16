@@ -9,71 +9,15 @@ body {
     background-color: #268626;
 }
 
-/* Page Layout - Side Columns + Center*/
-
-/* Flex container: sidebar + center + sidebar in a row, fills the entire viewport */
-.page-layout {
-    display: flex;
-    min-height: 100vh;
-    background-color: #ffffff;
-}
-
-/* Fixed 150px side columns, do not shrink */
-.page-sidebar {
-    width: 150px;
-    flex-shrink: 0;
-    background-color: #268626;
-}
-
-/* Flexible center column containing header + content stacked vertically */
-.page-center {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
 /* Main content area, expands to fill remaining space */
 .page-main {
     flex: 1;
 }
 
 
-/* Headers */
-
-
-/* para garantir que o header e a navbar está em cima de tudo */
+/* ensure header and navbar stay on top */
 header {
     z-index: 9999 !important;
-}
-
-/* Header with title aligned left */
-.header-left {
-    height: 80px;
-    background-color: #52CD1D;
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
-    font-weight: 900;
-    padding-left: 4rem;
-}
-
-.header-left a {
-    color: #000000;
-    text-decoration: none;
-}
-
-/* Navigation links pushed to the right side of the header */
-.header-nav {
-    margin-left: auto;
-    padding-right: 14rem;
-    display: flex;
-    gap: 8rem;
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.header-nav a {
-    border: none;
 }
 
 .row {
@@ -86,19 +30,20 @@ header {
 
 .top {
     background-color: #52CD1D;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
     padding: 10px 20px;
     border-radius: 7px 7px 0 0;
 }
 
 .authentication {
-    float: right;
+    margin-left: 15px;
     text-decoration: none;
     color: black;
-    margin-left: 15px;
 }
 
 .bigword {
+    flex: 1;
     font-size: 2rem;
     font-weight: bold;
     text-decoration: none;
@@ -172,6 +117,9 @@ nav>a:active {
 }
 
 
+.tutorial.row.div
+
+
 
 
 
@@ -197,7 +145,7 @@ nav>a:active {
     align-items: center;
 }
 
-.lb-content>div {
+.lb-content > .col-10 {
     height: 100%;
     display: flex;
     align-items: center;
@@ -209,7 +157,7 @@ nav>a:active {
     flex-shrink: 0;
 }
 
-.lb-tab {
+.lb-tab a {
     width: 50%;
     text-align: center;
     padding: 10px 0;
@@ -219,11 +167,11 @@ nav>a:active {
     color: white;
 }
 
-.lb-tab:hover {
+.lb-tab a:hover {
     color: black;
 }
 
-.lb-tab:active {
+.lb-tab a:active {
     color: white;
 }
 
@@ -293,7 +241,7 @@ nav>a:active {
     justify-content: center;
 }
 
-.fb-content>div {
+.fb-content > .col-10 {
     display: flex;
     justify-content: center;
     padding: 100% 0;
@@ -327,6 +275,83 @@ textarea.form-control {
     padding-left: 10px;
 }
 
+/* Login required message */
+.auth-required-msg {
+    text-align: center;
+    padding: 80px 30px;
+    min-height: 300px;
+    flex-direction: column;
+}
+
+.auth-required-msg a {
+    color: #268626;
+    font-weight: 700;
+}
+
+/* Login modal */
+.login-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.login-modal {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px 30px;
+    text-align: center;
+    max-width: 340px;
+    width: 90%;
+}
+
+.login-modal h4 {
+    margin-bottom: 10px;
+}
+
+.login-modal p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.login-modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.login-modal-btn {
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.login-modal-login {
+    background-color: #52CD1D;
+    color: #000;
+}
+
+.login-modal-signup {
+    background-color: #268626;
+    color: #fff;
+}
+
+.login-modal-close {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 
 
 
@@ -336,21 +361,50 @@ textarea.form-control {
 .foot {
     background-color: #53AC2D;
     border-radius: 0 0 7px 7px;
-    text-align: center;
     border-top: 1px solid #268626;
+    padding: 25px 30px 0;
+}
+
+.foot-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.foot-logo {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: black;
+    text-decoration: none;
+}
+
+.foot-tagline {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.foot-links {
+    display: flex;
+    gap: 18px;
+}
+
+.foot-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.foot-bottom {
+    border-top: 1px solid #268626;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 0.8rem;
 }
 
 /* Rooms Styles */
-
-.rooms-container {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    align-items: flex-start;
-    margin-top: 50px;
-    flex-wrap: wrap;
-    /* Makes card jump if not enough space*/
-}
 
 .rooms-card {
     width: 330px;
@@ -417,32 +471,6 @@ textarea.form-control {
 .rooms-card li span:nth-child(2) {
     flex-shrink: 0;
     /* Doesnt shrink*/
-}
-
-/* Action Buttons Section - Container for Quickplay, Create Room and Join */
-.rooms-actions {
-    display: flex;
-    justify-content: center;
-    /* Center the 3 buttons horizontally */
-    align-items: flex-end;
-    /* Align buttons to the bottom so center can be raised */
-    gap: 230px;
-    margin-top: 60px;
-    margin-bottom: 150px;
-}
-
-/* Center button wrapper - raised above the side buttons */
-.rooms-action-center {
-    margin-bottom: 20px;
-    /* Pushes Create Room higher than side buttons */
-}
-
-/* Side button wrapper - stacks elements vertically (input above button on right side) */
-.rooms-action-side {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
 }
 
 /* Base style shared by all 3 buttons */
@@ -527,31 +555,15 @@ textarea.form-control {
 
 /* Profile Styles */
 
-/* Container that splits main area into left (35%) and right (65%) */
-.profile-split {
-    display: flex;
-    min-height: 90vh;
-}
-
 /* Left panel - green background */
 .profile-left {
-    width: 35%;
     background-color: #B4FF94;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 60px;
+    min-height: 80vh;
 }
 
 /* Right panel - white background */
 .profile-right {
-    width: 65%;
     background-color: #ffffff;
-    padding: 100px 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
 }
 
 /* "Profile" title on the left panel */
@@ -645,15 +657,6 @@ textarea.form-control {
 .ls-header a {
     color: #000000;
     text-decoration: none;
-}
-
-.ls-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-    margin-top: 40px;
-    margin-bottom: 2rem;
 }
 
 .ls-card {
@@ -876,12 +879,6 @@ textarea.form-control {
     box-sizing: border-box;
 }
 
-/* player name */
-.player-name {
-    font-weight: bold;
-    margin-bottom: 40px;
-}
-
 /* spacing under name box */
 .my-name-box {
     margin-bottom: 120px;
@@ -969,22 +966,20 @@ textarea.form-control {
     position: relative;
 }
 
-/* room code and username position */
-.room-code-inline,
+/* username stays on top right */
 .room-user-inline {
     position: absolute;
     top: 12px;
+    right: 20px;
     font-weight: 700;
 }
 
-/* room code */
+/* room code goes to normal flow (below score) */
 .room-code-inline {
-    left: 20px;
-}
-
-/* username */
-.room-user-inline {
-    right: 20px;
+    position: static;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 700;
 }
 
 /* main room page */
@@ -1197,6 +1192,11 @@ textarea.form-control {
     padding: 10px;
 }
 
+.current-player {
+    border: 2px solid #52CD1D;
+    background-color: #e6f8dd;
+}
+
 
 @media only screen and (max-width: 540px) {
     
@@ -1213,14 +1213,4 @@ textarea.form-control {
     }
 
 }
-.topauth {}
 
-.footauth {}
-
-
-
-
-
-
-
-@media only screen and (max-width: 540px) {}

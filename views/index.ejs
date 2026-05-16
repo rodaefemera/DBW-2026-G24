@@ -1,0 +1,125 @@
+<%- include('partials/head') %>
+        <%- include('partials/header') %>
+
+        <!-- Login required modal -->
+        <div class="login-modal-overlay" id="loginModal" style="display: none;" onclick="if(event.target===this) closeLoginModal()">
+            <div class="login-modal">
+                <h4>🔒 Login Required</h4>
+                <p>You need to be logged in to access this feature.</p>
+                <div class="login-modal-buttons">
+                    <a href="/login" class="login-modal-btn login-modal-login">Log In</a>
+                    <a href="/signup" class="login-modal-btn login-modal-signup">Sign Up</a>
+                </div>
+                <button class="login-modal-close" onclick="closeLoginModal()">Close</button>
+            </div>
+        </div>
+
+        <section class="whitebg">
+            <div>
+                <h6>Press any of the big buttons to instantly enter a room! OR you can pick out a specific room, create one, or play singleplayer on the "Rooms" tab above!</p>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 nophone"></div>
+                <div class="col-12 col-md-6 col-lg-4 butt-div">
+                    <% if (typeof currentUser !== 'undefined' && currentUser) { %>
+                        <a href="/roombase?mode=casual" class="btn bigbutt btn-warning">CASUAL</a>
+                    <% } else { %>
+                        <a href="#" class="btn bigbutt btn-warning" onclick="event.preventDefault(); openLoginModal()">CASUAL</a>
+                    <% } %>
+                    <p>No scores, just get as many words as you can every so often until the word changes. Good to get started or just chill!</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 nophone"></div>
+                <div class="col-12 col-md-6 col-lg-4 butt-div">
+                    <% if (typeof currentUser !== 'undefined' && currentUser) { %>
+                        <a href="/roombase?mode=time_attack" class="btn bigbutt btn-danger">TIME ATTACK</a>
+                    <% } else { %>
+                        <a href="#" class="btn bigbutt btn-danger" onclick="event.preventDefault(); openLoginModal()">TIME ATTACK</a>
+                    <% } %>
+                    <p>A race against the clock! Whoever can get the most words within the time limit wins.</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 nophone"></div>
+                <div class="col-12 col-md-6 col-lg-4 butt-div">
+                    <% if (typeof currentUser !== 'undefined' && currentUser) { %>
+                        <a href="/roombase?mode=first_to_3" class="btn bigbutt btn-primary">1ST 2 3</a>
+                    <% } else { %>
+                        <a href="#" class="btn bigbutt btn-primary" onclick="event.preventDefault(); openLoginModal()">1ST 2 3</a>
+                    <% } %>
+                    <p>A true competition, a race for who can find enough words. The first to reach the designated amount of words wins.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="graybg">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-6">
+                    <h3>What is Matrioska?</h3>
+                    <p>Matrioska is a fast-paced word game where your goal is to find smaller, hidden words inside a main "Master Word". The longer the hidden word you find, the more points you score. Keep peeling the letters to climb the ranks!</p>
+                </div>
+                <div class="col-12 col-md-12 col-lg-6">
+                    <h3>Play with Friends!</h3>
+                    <p>You don't have to play alone. Join public lobbies or create private rooms to challenge your friends in real-time. Choose your favorite game mode, test your vocabulary, and see who dominates the global leaderboard!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="whitebg tutorial">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold mb-3">HOW TO PLAY</h2>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="text-center">
+                        <div class="bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                            <span class="fs-3 fw-bold">1</span>
+                        </div>
+                        <h4 class="fw-bold mb-3">Get the Master Word</h4>
+                        <p class="text-muted">Every round starts with a long "Master Word". Your mission is to look closely at its letters and find hidden meanings.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="text-center">
+                        <div class="bg-danger rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                            <span class="fs-3 fw-bold">2</span>
+                        </div>
+                        <h4 class="fw-bold mb-3">Peel the Layers</h4>
+                        <p class="text-muted">Find smaller words hidden inside the main word. Golden Rule: The letters must appear in the exact direct or indirect sequence.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="text-center">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                            <span class="fs-3 fw-bold">3</span>
+                        </div>
+                        <h4 class="fw-bold mb-3">Score Big</h4>
+                        <p class="text-muted">Submit your words before the timer runs out. The more layers you uncover, or the longer the hidden word is, the more points you earn!</p>
+                    </div>
+                </div>
+
+                
+                <div class="col-12 text-center mt-5">
+                    <h2 class="display-4 fw-bold mb-3">READY TO PLAY?</h2>
+                    <p class="lead mb-4">Join an active lobby or create your own custom game.</p>
+                    <a href="/roomlist" class="btn btn-success btn-lg bigbutt">ROOMS</a>
+                </div>
+            </div>
+
+            
+        </section>
+
+
+
+        <%- include('partials/footer') %>
+    </div>
+
+
+    <script>
+        function openLoginModal() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

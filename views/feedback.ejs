@@ -1,0 +1,42 @@
+<%- include('partials/head') %>
+        <%- include('partials/header') %>
+
+        <% if (typeof currentUser !== 'undefined' && currentUser) { %>
+        <section class="whitebg fb-content">
+            <div class="col-10 col-md-10 col-lg-8">
+                <div class="fb-card">
+                    <div class="fb-form">
+                        <h4>We greatly appreciate your feedback!</h4>
+                        <p class="mb-4">It's through feedback that we can grow and improve on this little corner of the net! Please tell us how we can improve or take the opportunity to report someone for innappropriate behaviour!</p>
+                        <form id="feedbackForm">
+                            <div class="mb-3">
+                                <label for="emailInput" class="form-label">Email (optional)</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="your.email@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="feedbackTextarea" class="form-label">Feedback <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="feedbackTextarea" rows="4" placeholder="Your feedback here..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-warning">Send Feedback</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <% } else { %>
+        <section class="whitebg fb-content">
+            <div class="auth-required-msg">
+                <h3>🔒 Login Required</h3>
+                <p>Please <a href="/login">log in</a> or <a href="/signup">sign up</a> to send feedback.</p>
+            </div>
+        </section>
+        <% } %>
+
+        <%- include('partials/footer') %>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="/js/feedback.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<%- include('partials/head') %>
+            <%- include('partials/header') %>
+
+            <!-- Center -->
+            <main class="page-main whitebg text-center py-4">
+                <h3 class="mt-0">Rooms</h3>
+                <p>Choose a game mode and join a room, or create your own.</p>
+
+                <div class="row g-4 justify-content-center mt-1" id="rooms-list">
+                </div>
+                <!-- Login required modal -->
+                <div class="login-modal-overlay" id="loginModal" style="display: none;" onclick="if(event.target===this) closeLoginModal()">
+                    <div class="login-modal">
+                        <h4>🔒 Login Required</h4>
+                        <p>You need to be logged in to access this feature.</p>
+                        <div class="login-modal-buttons">
+                            <a href="/login" class="login-modal-btn login-modal-login">Log In</a>
+                            <a href="/signup" class="login-modal-btn login-modal-signup">Sign Up</a>
+                        </div>
+                        <button class="login-modal-close" onclick="closeLoginModal()">Close</button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="row g-3 justify-content-center align-items-end mt-4 mb-5">
+
+                    <!-- Quickplay Dropdown (left) -->
+                    <div class="col-12 col-md-4 d-flex justify-content-center">
+                        <div class="rooms-dropdown">
+                            <button class="rooms-btn rooms-dropdown-btn" onclick="toggleDropdown()"> Quickplay ⏷ </button>
+                            <div class="rooms-dropdown-menu" id="quickplayMenu">
+                                <% if (typeof currentUser !== 'undefined' && currentUser) { %>
+                                    <a href="/roombase?mode=casual">Casual</a>
+                                    <a href="/roombase?mode=time_attack">Time Attack</a>
+                                    <a href="/roombase?mode=first_to_3">1st 2 3</a>
+                                <% } else { %>
+                                    <a href="#" onclick="event.preventDefault(); openLoginModal()">Casual</a>
+                                    <a href="#" onclick="event.preventDefault(); openLoginModal()">Time Attack</a>
+                                    <a href="#" onclick="event.preventDefault(); openLoginModal()">1st 2 3</a>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Create Room (center) -->
+                    <div class="col-12 col-md-4 d-flex justify-content-center">
+                        <% if (typeof currentUser !== 'undefined' && currentUser) { %>
+                            <a href="/createroom" class="rooms-btn rooms-create-btn">Create Room</a>
+                        <% } else { %>
+                            <a href="#" class="rooms-btn rooms-create-btn" onclick="event.preventDefault(); openLoginModal()">Create Room</a>
+                        <% } %>
+                    </div>
+
+                    <!-- Join by Code (right) -->
+                    <div class="col-12 col-md-4 d-flex flex-column align-items-center gap-2">
+                        <input type="text" class="rooms-code-input" placeholder="Room Code (#XYZ-123)">
+                        <% if (typeof currentUser !== 'undefined' && currentUser) { %>
+                            <a href="#" class="rooms-btn rooms-join-btn">Join</a>
+                        <% } else { %>
+                            <a href="#" class="rooms-btn rooms-join-btn" onclick="event.preventDefault(); openLoginModal()">Join</a>
+                        <% } %>
+                    </div>
+
+                </div>
+
+                <script>
+                    function toggleDropdown() {
+                        document.getElementById('quickplayMenu').classList.toggle('show');
+                    }
+
+                    function openLoginModal() {
+                        document.getElementById('loginModal').style.display = 'flex';
+                    }
+
+                    function closeLoginModal() {
+                        document.getElementById('loginModal').style.display = 'none';
+                    }
+                </script>
+            </main>
+        <%- include('partials/footer') %>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="/js/rooms.js"></script>
+</body>
+</html>

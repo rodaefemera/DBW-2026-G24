@@ -18,20 +18,20 @@ const playersList = document.getElementById("playersList");
 //hardcoded words and their answers while theres no backend
 const rounds = [
     {
-        word: "PASSAGEIRO",
-        answers: ["asa", "sai", "passo", "giro", "sago"]
+        word: "PASSENGER",
+        answers: ["pen", "age", "gear", "anger", "seen"]
     },
     {
-        word: "PALAVRA",
-        answers: ["ala", "ara", "pala", "lava", "vara"]
+        word: "LANGUAGE",
+        answers: ["age", "lag", "gel", "angle", "lane"]
     },
     {
-        word: "MATRIOSCA",
-        answers: ["ato", "rio", "tia", "mar", "saco", "rato"]
+        word: "COMPUTER",
+        answers: ["put", "core", "term", "come", "top"]
     },
     {
-        word: "PROGRAMA",
-        answers: ["ama", "grama", "gama", "rama", "paro", "roma"]
+        word: "PROGRAM",
+        answers: ["gram", "ram", "pro", "rag", "gap"]
     }
 ];
 

@@ -1,0 +1,59 @@
+<%- include('partials/head') %>
+            <%- include('partials/header') %>
+
+            <% if (typeof currentUser !== 'undefined' && currentUser) { %>
+            <!-- Center -->
+            <main class="page-main whitebg">
+                <div class="row g-0">
+
+                    <!-- Left Panel (35%) -->
+                    <div class="col-12 col-lg-4 profile-left d-flex flex-column align-items-center py-5">
+                        <h2 class="profile-title">Profile</h2>
+
+                        <img src="<%= currentUser.profilePic || 'https://via.placeholder.com/150' %>" class="profile-avatar" id="profileIcon" alt="Avatar" style="object-fit: cover; width: 150px; height: 150px; border-radius: 50%;">
+                        <p class="profile-username" id="profileName"><%= currentUser.username %></p>
+                        
+                        <form action="/profile?_method=PATCH" method="POST" class="mt-3 w-100 px-4">
+                            <div class="input-group input-group-sm">
+                                <input type="url" name="profilePic" class="form-control" placeholder="New Photo URL" required>
+                                <button type="submit" class="btn btn-outline-primary">Save</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Right Panel (65%) -->
+                    <div class="col-12 col-lg-8 profile-right d-flex flex-column align-items-center py-5 px-4 px-lg-5">
+                        <h2 class="profile-pb-title">Personal Best</h2>
+
+                        <div class="profile-pb-list">
+                            <div class="profile-pb-item">
+                                <span class="profile-pb-mode">Time Attack:</span>
+                                <span class="profile-pb-score" id="scoreTimeAttack"><%= user.scoreTime %></span>
+                            </div>
+
+                            <div class="profile-pb-item">
+                                <span class="profile-pb-mode">1st 2 3:</span>
+                                <span class="profile-pb-score" id="scoreFirst23"><%= user.score123 %></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+            <% } else { %>
+            <main class="page-main whitebg">
+                <div class="auth-required-msg">
+                    <h3>🔒 Login Required</h3>
+                    <p>Please <a href="/login">log in</a> or <a href="/signup">sign up</a> to view your profile and statistics.</p>
+                </div>
+            </main>
+            <% } %>
+        <%- include('partials/footer') %>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
