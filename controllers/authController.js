@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require('../models/userModel');
 const passport = require('passport');
 
 // POST /signup — regista um novo utilizador e faz login automático

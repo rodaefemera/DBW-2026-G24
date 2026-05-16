@@ -1,4 +1,6 @@
-<div class="plslogin">
-    <h3>Uh oh!</h3>
-    <p>It seems like you currently aren't logged into an account! You may still be able to play the Casual gamemode, but you will need an account to play the rest so that your score can be properly registered! Please sign up or log into your account on the <b>top left corner</b>.</p>
-</div>
+<% if (typeof currentUser === 'undefined' || !currentUser) { %>
+    <div class="graybg plslogin">
+        <h3>Uh oh!</h3>
+        <p>It seems like you currently aren't logged into an account! You may still be able to play the Casual gamemode, but you will need an account to play the rest so that your score can be properly registered! Please sign up or log into your account on the <b>top right corner</b>.</p>
+    </div>
+<% } %>
