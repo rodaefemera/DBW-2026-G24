@@ -7,7 +7,7 @@ const methodOverride = require('method-override');
 const http = require('http');
 const { Server } = require('socket.io');
 const connectDB = require('./config/db');
-const { User } = require('./models/userModel');
+const configurePassport = require('./config/passport');
 
 // DNS porque deu-me (Rodrigo) erro por causa da minha rede. isto acabou por resolver.
 const dns = require("dns");
@@ -32,7 +32,12 @@ app.use(methodOverride('_method'));
 const sessionMiddleware = session({
     secret: 'matriosca-secret-key',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: {
+        httpOnly: true,
+        sameSite: 'lax',
+        maxAge: 1000 * 60 * 60  // 1 hora
+    }
 });
 app.use(sessionMiddleware);
 io.engine.use(sessionMiddleware);
@@ -40,9 +45,7 @@ io.engine.use(sessionMiddleware);
 // Passport
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+configurePassport(passport);
 
 // Passar o user a todas as views automaticamente
 app.use((req, res, next) => {

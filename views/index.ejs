@@ -1,19 +1,6 @@
 <%- include('partials/head') %>
         <%- include('partials/header') %>
 
-        <!-- Login required modal -->
-        <div class="login-modal-overlay" id="loginModal" style="display: none;" onclick="if(event.target===this) closeLoginModal()">
-            <div class="login-modal">
-                <h4>🔒 Login Required</h4>
-                <p>You need to be logged in to access this feature.</p>
-                <div class="login-modal-buttons">
-                    <a href="/login" class="login-modal-btn login-modal-login">Log In</a>
-                    <a href="/signup" class="login-modal-btn login-modal-signup">Sign Up</a>
-                </div>
-                <button class="login-modal-close" onclick="closeLoginModal()">Close</button>
-            </div>
-        </div>
-
         <section class="whitebg">
             <div>
                 <h6>Press any of the big buttons to instantly enter a room! OR you can pick out a specific room, create one, or play singleplayer on the "Rooms" tab above!</p>
@@ -21,29 +8,17 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-4 nophone"></div>
                 <div class="col-12 col-md-6 col-lg-4 butt-div">
-                    <% if (typeof currentUser !== 'undefined' && currentUser) { %>
-                        <a href="/roombase?mode=casual" class="btn bigbutt btn-warning">CASUAL</a>
-                    <% } else { %>
-                        <a href="#" class="btn bigbutt btn-warning" onclick="event.preventDefault(); openLoginModal()">CASUAL</a>
-                    <% } %>
+                    <a href="/roombase?mode=casual" class="btn bigbutt btn-warning">CASUAL</a>
                     <p>No scores, just get as many words as you can every so often until the word changes. Good to get started or just chill!</p>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 nophone"></div>
                 <div class="col-12 col-md-6 col-lg-4 butt-div">
-                    <% if (typeof currentUser !== 'undefined' && currentUser) { %>
-                        <a href="/roombase?mode=time_attack" class="btn bigbutt btn-danger">TIME ATTACK</a>
-                    <% } else { %>
-                        <a href="#" class="btn bigbutt btn-danger" onclick="event.preventDefault(); openLoginModal()">TIME ATTACK</a>
-                    <% } %>
+                    <a href="/roombase?mode=time_attack" class="btn bigbutt btn-danger">TIME ATTACK</a>
                     <p>A race against the clock! Whoever can get the most words within the time limit wins.</p>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 nophone"></div>
                 <div class="col-12 col-md-6 col-lg-4 butt-div">
-                    <% if (typeof currentUser !== 'undefined' && currentUser) { %>
-                        <a href="/roombase?mode=first_to_3" class="btn bigbutt btn-primary">1ST 2 3</a>
-                    <% } else { %>
-                        <a href="#" class="btn bigbutt btn-primary" onclick="event.preventDefault(); openLoginModal()">1ST 2 3</a>
-                    <% } %>
+                    <a href="/roombase?mode=first_to_3" class="btn bigbutt btn-primary">1ST 2 3</a>
                     <p>A true competition, a race for who can find enough words. The first to reach the designated amount of words wins.</p>
                 </div>
             </div>
@@ -112,14 +87,6 @@
     </div>
 
 
-    <script>
-        function openLoginModal() {
-            document.getElementById('loginModal').style.display = 'flex';
-        }
-        function closeLoginModal() {
-            document.getElementById('loginModal').style.display = 'none';
-        }
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
