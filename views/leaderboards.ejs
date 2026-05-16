@@ -1,7 +1,7 @@
 <%- include('partials/head') %>
         <%- include('partials/header') %>
-        <%- include('partials/nologin') %>
 
+        <% if (typeof currentUser !== 'undefined' && currentUser) { %>
         <section class="whitebg lb-content">
             <div class="col-10 col-md-10 col-lg-8">
                 <div class="lb-wrapper <%= mode === '123' ? 'active-123' : 'active-time' %>">

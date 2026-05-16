@@ -38,6 +38,9 @@ app.use(session({
 // Passport
 app.use(passport.initialize());
 app.use(passport.session());
+passport.use(user.User.createStrategy());
+passport.serializeUser(user.User.serializeUser());
+passport.deserializeUser(user.User.deserializeUser());
 
 // Passar o user a todas as views automaticamente
 app.use((req, res, next) => {
