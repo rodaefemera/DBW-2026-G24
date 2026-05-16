@@ -1041,6 +1041,7 @@ textarea.form-control {
 .room-chat-messages {
     background-color: #dcdcdc;
     border: 1px solid #bdbdbd;
+    max-height: 360px;
 }
 
 /* player card */

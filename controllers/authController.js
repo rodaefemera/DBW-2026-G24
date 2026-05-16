@@ -1,8 +1,8 @@
-const User = require('../models/userModel');
+const { User } = require('../models/userModel');
 const passport = require('passport');
 
 // POST /signup — register a new user and automatically log them in
-function postSignup(req, res) {
+const postSignup = (req, res) => {
     const { username, email, password } = req.body;
 
     const newUser = new User({ username, email });
@@ -16,7 +16,7 @@ function postSignup(req, res) {
             res.redirect('/');
         });
     });
-}
+};
 
 // POST /login — authenticate the user
 const postLogin = passport.authenticate('local', {
@@ -25,13 +25,11 @@ const postLogin = passport.authenticate('local', {
 });
 
 // GET /logout — end the session
-function getLogout(req, res) {
+const getLogout = (req, res) => {
     req.logout((err) => {
-        if (err) {
-            console.error(err);
-        }
+        if (err) console.error(err);
         res.redirect('/');
     });
-}
+};
 
 module.exports = { postSignup, postLogin, getLogout };

@@ -1,24 +1,28 @@
-// Controller responsável por fazer a ponte entre os dados e as views temporáriamente até o back-end for criado
+// Controller responsável por fazer a ponte entre os dados e as views
 
-function renderIndex(req, res) {
+const renderIndex = (req, res) => {
     res.render('index', { title: 'MATRIOSCA' });
-}
+};
 
-function renderFriends(req, res) {
+const renderFriends = (req, res) => {
     res.render('friends', { title: 'Friends - MATRIOSCA' });
-}
+};
 
-function renderRoomlist(req, res) {
+const renderRoomlist = (req, res) => {
     res.render('roomlist', { title: 'Rooms - MATRIOSCA' });
-}
+};
 
-function renderCreateroom(req, res) {
+const renderCreateroom = (req, res) => {
+    if (!req.isAuthenticated()) return res.redirect('/login');
     res.render('createroom', { title: 'Create Room - MATRIOSCA' });
-}
+};
 
-function renderRoombase(req, res) {
-    res.render('roombase', { title: 'Room - MATRIOSCA' });
-}
+const renderRoombase = (req, res) => {
+    if (!req.isAuthenticated()) return res.redirect('/login');
+    const mode     = req.query.mode     || 'time_attack';
+    const roomCode = req.query.roomCode || 'LOBBY';
+    res.render('roombase', { title: 'Room - MATRIOSCA', mode, roomCode });
+};
 
 module.exports = {
     renderIndex,
