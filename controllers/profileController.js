@@ -1,6 +1,30 @@
-const User = require('../models/User');
+const { User } = require('../models/userModel');
 
-async function updateProfilePic(req, res) {
+// Mostra a página de um utilizador pretendido
+const renderUserProfile = async (req, res, next) => {
+    try {
+        const user = await User.fetchById(req.params.id);
+
+        res.render('profile', {
+            title: `Profile`,
+            user: user
+        });
+    } catch (err) {
+        next(err);
+    }
+};
+
+const renderOwnProfile = (req, res, next) => {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
+
+    // Redireciona para o perfil desse utilizador via ID
+    res.redirect(`/profile/${req.user._id}`);
+};
+
+// Atualiza o pp do utilizador
+const updateProfilePic = async (req, res) => {
     try {
         // Obter o URL submetido no formulário (name="profilePic")
         const { profilePic } = req.body;
@@ -20,5 +44,7 @@ async function updateProfilePic(req, res) {
 }
 
 module.exports = {
-    updateProfilePic
+    renderUserProfile,
+    updateProfilePic,
+    renderOwnProfile
 };
