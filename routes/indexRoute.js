@@ -1,6 +1,7 @@
 // Definição das rotas URL e métodos HTTP
 const express = require('express');
 const router = express.Router();
+const { ensureAuthenticated } = require('../middleware/authMiddleware');
 
 const {
     renderIndex,
@@ -12,9 +13,9 @@ const {
 
 // Rotas GET para cada página
 router.get('/', renderIndex);
-router.get('/friends', renderFriends);
+router.get('/friends', ensureAuthenticated, renderFriends);
 router.get('/roomlist', renderRoomlist);
-router.get('/createroom', renderCreateroom);
-router.get('/roombase', renderRoombase);
+router.get('/createroom', ensureAuthenticated, renderCreateroom);
+router.get('/roombase', ensureAuthenticated, renderRoombase);
 
 module.exports = router;

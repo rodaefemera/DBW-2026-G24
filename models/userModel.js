@@ -30,6 +30,28 @@ userSchema.statics.fetchById = async function (id) {
 
 const User = mongoose.model('User', userSchema);
 
+// Registers new user
+function registerUser(userData, password) {
+    const newUser = new User(userData);
+    return new Promise((resolve, reject) => {
+        User.register(newUser, password, (err, user) => {
+            if (err) return reject(err);
+            resolve(user);
+        });
+    });
+}
+
+// Authenticates user using Passport
+function authenticateUser(req, res, next) {
+    const passport = require('passport');
+    passport.authenticate('local', {
+        successRedirect: '/',
+        failureRedirect: '/login',
+    })(req, res, next);
+}
+
 module.exports = {
-    User
+    User,
+    registerUser,
+    authenticateUser
 };
