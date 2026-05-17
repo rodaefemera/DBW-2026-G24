@@ -3,10 +3,10 @@ const passportLocalMongoose = require('passport-local-mongoose').default;
 
 const userSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
-    scoreTime: { type: Number, required: true, unique: false },     // Pontuação total no Time Attack, a que vai ser adicionada no fim de uma ronda
-    score123: { type: Number, required: true, unique: false },     // Pontuação total no 1st 2 3, a que vai ser adicionada no fim de uma ronda
-    profilePic: { type: String, required: true, unique: false, default: '' },
-    friends: { type: Array, required: true, unique: false },
+    scoreTime: { type: Number, required: true, unique: false, default: 0 },     // Pontuação total no Time Attack, a que vai ser adicionada no fim de uma ronda
+    score123: { type: Number, required: true, unique: false, default: 0 },     // Pontuação total no 1st 2 3, a que vai ser adicionada no fim de uma ronda
+    profilePic: { type: String, required: true, unique: false, default: '/images/avatar2.png' },
+    friends: { type: Array, required: true, unique: false, default: [] },
 });
 
 // Adiciona automaticamente os campos username, hash e salt

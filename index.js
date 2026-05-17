@@ -58,13 +58,15 @@ const indexRouter       = require('./routes/indexRoute');
 const feedbackRouter    = require('./routes/feedbackRoute');
 const leaderboardRouter = require('./routes/leaderboardRoute');
 const authRouter        = require('./routes/authRoute');
-const profileRoute      = require('./routes/profileRoute');
+const profileRouter      = require('./routes/profileRoute');
+const friendsRouter     = require('./routes/friendsRoute')
 
 app.use('/', indexRouter);
 app.use('/feedback', feedbackRouter);
 app.use('/leaderboards', leaderboardRouter);
 app.use('/', authRouter);
-app.use('/', profileRoute);
+app.use('/', profileRouter);
+app.use('/friends', friendsRouter)
 
 // Socket.io
 require('./utils/socket')(io);

@@ -4,10 +4,6 @@ const renderIndex = (req, res) => {
     res.render('index', { title: 'MATRIOSCA' });
 };
 
-const renderFriends = (req, res) => {
-    res.render('friends', { title: 'Friends - MATRIOSCA' });
-};
-
 const renderRoomlist = (req, res) => {
     res.render('roomlist', { title: 'Rooms - MATRIOSCA' });
 };
@@ -26,7 +22,6 @@ const renderRoombase = (req, res) => {
 
 module.exports = {
     renderIndex,
-    renderFriends,
     renderRoomlist,
     renderCreateroom,
     renderRoombase,
