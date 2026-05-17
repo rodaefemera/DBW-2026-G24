@@ -14,13 +14,13 @@
                 <aside class="friends-left">
 
                     <div class="my-name-box">
-                        <label for="myName">Teu nome:</label>
+                        <label for="myName">Your Name:</label>
                         <p id="myName"><%= user.username %></p>
                     </div>
 
                     <!-- form to add a new friend -->
                     <form action="/friends/search" method="GET" class="friend-search-form" id="addFriendForm">
-                        <label for="friendUsername">Adicionar amigo:</label>
+                        <label for="friendUsername">Add Friend:</label>
 
                         <input
                             type="text"
@@ -31,9 +31,9 @@
                             required
                         >
 
-                        <button type="submit">search</button>
+                        <button type="submit">Search</button>
                     </form>
-
+                    
                     <!-- message area -->
                     <p id="friendMessage">
                         <% if (typeof friendMessage !== 'undefined' && friendMessage) { %>
@@ -51,13 +51,14 @@
                     <% if (friends.length > 0) { %>
                         <div class="friends-list" id="friendsList">
                             <% friends.forEach(friend => { %>
-                                <div class="friend-card">
-                                    <div class="friend-avatar"></div>
-                                    <div class="friend-info">
-                                        <p><a href="/profile/<%= friend.id %>" class="friend-title" style="text-decoration: none; color: inherit;">
+                                <div class="friend-card" style="display: flex; align-items: center; margin-bottom: 15px; padding: 10px; background-color: #EDF5EE; border-radius: 8px; border: 1px solid #000;">
+                                    <div class="friend-avatar" style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; background-color: #268626; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-right: 15px;">
+                                        <img src="<%= friend.profilePic %>" alt="avatar" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div class="friend-info" style="display: flex; flex-direction: column; justify-content: center;">
+                                        <p style="margin: 0; font-size: 1.1rem;"><a href="/profile/<%= friend.id %>" class="friend-title" style="text-decoration: none; color: inherit; font-weight: bold;">
                                             <%= friend.name %>
                                         </a></p>
-                                        <span class="friend-status"><%= friend.status %></span>
                                     </div>
                                 </div>
                             <% }); %>

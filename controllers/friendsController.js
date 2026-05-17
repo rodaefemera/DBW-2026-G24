@@ -12,7 +12,7 @@ const renderFriends = async (req, res, next) => {
 
         const users = await User.find(
             { _id: { $in: userFriends } },
-            'username'
+            'username profilePic'
         );
 
         const friends = [];
@@ -20,7 +20,7 @@ const renderFriends = async (req, res, next) => {
             friends.push({
                 id: userDoc._id,
                 name: userDoc.username,
-                status: 'online'
+                profilePic: userDoc.profilePic
             });
         }
 
@@ -67,7 +67,7 @@ const searchAddFriend = async (req, res, next) => {
             const userFriends = Array.isArray(req.user.friends) ? req.user.friends : [];
             const users = await User.find(
                 { _id: { $in: userFriends } },
-                'username'
+                'username profilePic'
             );
 
             const friends = [];
@@ -75,7 +75,7 @@ const searchAddFriend = async (req, res, next) => {
                 friends.push({
                     id: userDoc._id,
                     name: userDoc.username,
-                    status: 'online'
+                    profilePic: userDoc.profilePic
                 });
             }
 
@@ -91,7 +91,7 @@ const searchAddFriend = async (req, res, next) => {
             const userFriends = Array.isArray(req.user.friends) ? req.user.friends : [];
             const users = await User.find(
                 { _id: { $in: userFriends } },
-                'username'
+                'username profilePic'
             );
 
             const friends = [];
@@ -99,7 +99,7 @@ const searchAddFriend = async (req, res, next) => {
                 friends.push({
                     id: userDoc._id,
                     name: userDoc.username,
-                    status: 'online'
+                    profilePic: userDoc.profilePic
                 });
             }
 
@@ -115,7 +115,7 @@ const searchAddFriend = async (req, res, next) => {
             const userFriends = Array.isArray(req.user.friends) ? req.user.friends : [];
             const users = await User.find(
                 { _id: { $in: userFriends } },
-                'username'
+                'username profilePic'
             );
 
             const friends = [];
@@ -123,7 +123,7 @@ const searchAddFriend = async (req, res, next) => {
                 friends.push({
                     id: userDoc._id,
                     name: userDoc.username,
-                    status: 'online'
+                    profilePic: userDoc.profilePic
                 });
             }
 
@@ -144,7 +144,7 @@ const searchAddFriend = async (req, res, next) => {
         if (userHasFriend || friendHasUser) {
             const users = await User.find(
                 { _id: { $in: userFriends } },
-                'username'
+                'username profilePic'
             );
 
             const friends = [];
@@ -152,7 +152,7 @@ const searchAddFriend = async (req, res, next) => {
                 friends.push({
                     id: userDoc._id,
                     name: userDoc.username,
-                    status: 'online'
+                    profilePic: userDoc.profilePic
                 });
             }
 
@@ -174,7 +174,7 @@ const searchAddFriend = async (req, res, next) => {
 
         const users = await User.find(
             { _id: { $in: userFriends } },
-            'username'
+            'username profilePic'
         );
 
         const friends = [];
@@ -182,7 +182,7 @@ const searchAddFriend = async (req, res, next) => {
             friends.push({
                 id: userDoc._id,
                 name: userDoc.username,
-                status: 'online'
+                profilePic: userDoc.profilePic
             });
         }
 
