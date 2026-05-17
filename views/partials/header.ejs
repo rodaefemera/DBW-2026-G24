@@ -12,13 +12,8 @@
                 <% } %>
             </div>
             <nav class="navegacao">
-                <% if (typeof currentUser !== 'undefined' && currentUser) { %>
-                    <a href="/profile">Profile</a>
-                    <a href="/friends">Friends</a>
-                <% } else { %>
-                    <a href="/login">Profile</a>
-                    <a href="/login">Friends</a>
-                <% } %>
+                <a href="/profile">Profile</a>
+                <a href="/friends">Friends</a>
                 <a href="/roomlist">Rooms</a>
                 <a href="/leaderboards">Leaderboard</a>
                 <a href="/feedback">Feedback</a>

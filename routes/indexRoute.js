@@ -2,11 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 const {
-    renderIndex,
-    renderFriends,
+    renderIndex
 } = require('../controllers/indexController');
 
 router.get('/', renderIndex);
-router.get('/friends', renderFriends);
 
 module.exports = router;
