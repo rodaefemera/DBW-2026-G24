@@ -2,6 +2,7 @@
 
 const gameLogic = require('./gameLogic');
 const { User } = require('../models/userModel');
+const Room = require('../models/roomModel');
 
 const rooms = {};
 const TIME_ATTACK_DURATION = 60;
@@ -31,6 +32,9 @@ module.exports = (io) => {
             gameLogic.addPlayer(room, socket.id, username);
             socket.join(roomCode);
             socket.data.roomCode = roomCode;
+
+            // Sync with MongoDB
+            Room.findByIdAndUpdate(roomCode, { $addToSet: { users: username } }).catch(() => {});
 
             socket.emit('game-state', {
                 mainWord:   room.mainWord,
@@ -85,7 +89,6 @@ module.exports = (io) => {
             const word = guess.trim().toLowerCase();
             player.foundWords.push(word);
 
-            // Casual mode has no points — only word count matters
             if (room.mode !== 'casual') {
                 player.score += result.points;
             }
@@ -102,7 +105,6 @@ module.exports = (io) => {
 
             io.to(roomCode).emit('scoreboard-update', { scoreboard });
 
-            // first_to_3 finish condition
             if (room.mode === 'first_to_3' && player.foundWords.length >= 3) {
                 room.finished = true;
                 if (room._timer) clearInterval(room._timer);
@@ -127,6 +129,9 @@ module.exports = (io) => {
             const room = rooms[roomCode];
             gameLogic.removePlayer(room, socket.id);
 
+            // Sync with MongoDB
+            Room.findByIdAndUpdate(roomCode, { $pull: { users: username } }).catch(() => {});
+
             io.to(roomCode).emit('player-left', {
                 username,
                 scoreboard: gameLogic.getScoreboard(room),
@@ -134,6 +139,7 @@ module.exports = (io) => {
 
             if (Object.keys(room.players).length === 0) {
                 if (room._timer) clearInterval(room._timer);
+                Room.findByIdAndDelete(roomCode).catch(() => {});
                 delete rooms[roomCode];
                 console.log(`[room] ${roomCode} deleted (empty)`);
             }

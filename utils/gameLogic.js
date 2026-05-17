@@ -50,7 +50,7 @@ const validateGuess = (mainWord, guess, foundSoFar = []) => {
     return { ok: true, points: calculatePoints(g) };
 };
 
-const createRoom = (roomCode, mode = 'time_attack', maxPlayers = 8) => ({
+const createRoom = (roomCode, mode = 'time_attack', maxPlayers = 20) => ({
     roomCode,
     mode,
     maxPlayers,
