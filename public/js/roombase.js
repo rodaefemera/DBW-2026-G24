@@ -55,7 +55,7 @@ const renderScoreboard = (scoreboard) => {
         card.className = 'room-player-card';
         if (player.username === myUsername) card.classList.add('current-player');
         card.innerHTML = `
-            <p class="room-player-rank">#${i + 1}</p>
+            ${currentMode !== 'casual' ? `<p class="room-player-rank">#${i + 1}</p>` : ''}
             <p class="room-player-name">${player.username}</p>
             ${currentMode !== 'casual' ? `<p class="room-player-points">${player.score} pts</p>` : ''}
             <p class="room-player-found">${player.foundWords.length} words found</p>
