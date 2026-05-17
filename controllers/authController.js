@@ -1,10 +1,40 @@
-const { registerUser, authenticateUser } = require('../models/userModel');
+const { User, registerUser, authenticateUser } = require('../models/userModel');
 const passport = require('passport');
 
 // POST /signup — register new user 
 async function postSignup(req, res) {
     try {
-        const { username, email, password } = req.body;
+        const username = req.body.username.trim();
+        const email = req.body.email.trim();
+        const password = req.body.password;
+
+        // Check empty fields
+        if (!username || !email || !password) {
+            return res.render('signup', { title: 'Sign Up - MATRIOSCA', error: 'All fields are required.' });
+        }
+
+        // Username max 15
+        if (username.length > 15) {
+            return res.render('signup', { title: 'Sign Up - MATRIOSCA', error: 'Username cannot exceed 15 characters.' });
+        }
+
+        // Password max 12
+        if (password.length > 12) {
+            return res.render('signup', { title: 'Sign Up - MATRIOSCA', error: 'Password cannot exceed 12 characters.' });
+        }
+
+        // Check repeated username
+        const existingUsername = await User.findOne({ username });
+        if (existingUsername) {
+            return res.render('signup', { title: 'Sign Up - MATRIOSCA', error: 'This username is already registered.' });
+        }
+
+        // Check repeated email
+        const existingEmail = await User.findOne({ email });
+        if (existingEmail) {
+            return res.render('signup', { title: 'Sign Up - MATRIOSCA', error: 'This email is already registered.' });
+        }
+
         await registerUser({ username, email }, password);
         // Auto-login após registo
         passport.authenticate('local')(req, res, () => {
