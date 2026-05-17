@@ -58,12 +58,12 @@
                     <!-- Quickplay Dropdown (left) -->
                     <div class="col-12 col-md-4 d-flex justify-content-center">
                         <div class="rooms-dropdown">
-                            <button class="rooms-btn rooms-dropdown-btn" onclick="toggleDropdown()"> Quickplay ⏷ </button>
+                            <button class="rooms-btn rooms-dropdown-btn" onclick="toggleDropdown()"> SinglePlayer ⏷ </button>
                             <div class="rooms-dropdown-menu" id="quickplayMenu">
                                 <% if (typeof currentUser !== 'undefined' && currentUser) { %>
-                                    <a href="/roombase?mode=casual">Casual</a>
-                                    <a href="/roombase?mode=time_attack">Time Attack</a>
-                                    <a href="/roombase?mode=first_to_3">1st 2 3</a>
+                                    <a href="#" onclick="startSingleplayer('casual')">Casual</a>
+                                    <a href="#" onclick="startSingleplayer('time_attack')">Time Attack</a>
+                                    <a href="#" onclick="startSingleplayer('first_to_3')">1st 2 3</a>
                                 <% } else { %>
                                     <a href="#" onclick="event.preventDefault(); openLoginModal()">Casual</a>
                                     <a href="#" onclick="event.preventDefault(); openLoginModal()">Time Attack</a>
@@ -111,6 +111,29 @@
                         const code = document.getElementById('roomCodeInput').value.trim();
                         if (!code) return;
                         window.location.href = '/roombase?roomCode=' + code;
+                    }
+
+                    function startSingleplayer(mode) {
+                        const form = document.createElement('form');
+                        form.method = 'POST';
+                        form.action = '/createroom';
+                        
+                        const fields = {
+                            gameMode: mode,
+                            playersLimit: '1',
+                            privacy: 'private'
+                        };
+                        
+                        Object.entries(fields).forEach(([name, value]) => {
+                            const input = document.createElement('input');
+                            input.type = 'hidden';
+                            input.name = name;
+                            input.value = value;
+                            form.appendChild(input);
+                        });
+                        
+                        document.body.appendChild(form);
+                        form.submit();
                     }
                 </script>
             </main>
