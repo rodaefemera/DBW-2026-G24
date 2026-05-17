@@ -10,6 +10,10 @@
             <h3 style ="margin-bottom: 5px;" > Create ur account </h3>
             <p> Register to start playing! </p>
 
+            <% if (typeof error !== 'undefined' && error) { %>
+                <div class="alert alert-danger" role="alert"><%= error %></div>
+            <% } %>
+
             <form action="/signup" method="POST">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
