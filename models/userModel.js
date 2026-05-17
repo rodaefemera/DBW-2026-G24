@@ -1,12 +1,25 @@
 const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose').default;
+const sanitizeHtml = require('sanitize-html');
 
 const userSchema = new mongoose.Schema({
-    email: { type: String, required: true, unique: true },
-    scoreTime: { type: Number, required: true, unique: false, default: 0 },     // Pontuação total no Time Attack, a que vai ser adicionada no fim de uma ronda
-    score123: { type: Number, required: true, unique: false, default: 0 },     // Pontuação total no 1st 2 3, a que vai ser adicionada no fim de uma ronda
-    profilePic: { type: String, required: true, unique: false, default: '/images/avatar2.png' },
-    friends: { type: Array, required: true, unique: false, default: [] },
+    username: {
+        type: String,
+        required: true,
+        unique: true,
+        maxlength: 15,
+        set: function (value) { return sanitizeHtml(value, { allowedTags: [], allowedAttributes: {} }); }
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        set: function (value) { return sanitizeHtml(value, { allowedTags: [], allowedAttributes: {} }); }
+    },
+    scoreTime: { type: Number, default: 0 },     // Pontuação total no Time Attack, a que vai ser adicionada no fim de uma ronda
+    score123: { type: Number, default: 0 },     // Pontuação total no 1st 2 3, a que vai ser adicionada no fim de uma ronda
+    profilePic: { type: String, default: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png' },
+    friends: { type: Array, default: [] },
 });
 
 // Adiciona automaticamente os campos username, hash e salt
@@ -31,14 +44,9 @@ userSchema.statics.fetchById = async function (id) {
 const User = mongoose.model('User', userSchema);
 
 // Registers new user
-function registerUser(userData, password) {
+async function registerUser(userData, password) {
     const newUser = new User(userData);
-    return new Promise((resolve, reject) => {
-        User.register(newUser, password, (err, user) => {
-            if (err) return reject(err);
-            resolve(user);
-        });
-    });
+    return await User.register(newUser, password);
 }
 
 // Authenticates user using Passport
