@@ -8,13 +8,16 @@ const http = require('http');
 const { Server } = require('socket.io');
 const connectDB = require('./config/db');
 const configurePassport = require('./config/passport');
+const Room = require('./models/roomModel');
 
 // DNS porque deu-me (Rodrigo) erro por causa da minha rede. isto acabou por resolver.
 const dns = require("dns");
 dns.setServers(['1.1.1.1', '8.8.8.8']);
 
-// Ligar à base de dados
-connectDB();
+// Ligar à base de dados e limpar salas antigas
+connectDB().then(() => {
+    Room.deleteMany({}).catch(err => console.error(err));
+});
 
 const app = express();
 const server = http.createServer(app);
@@ -59,8 +62,10 @@ const feedbackRouter    = require('./routes/feedbackRoute');
 const leaderboardRouter = require('./routes/leaderboardRoute');
 const authRouter        = require('./routes/authRoute');
 const profileRoute      = require('./routes/profileRoute');
+const roomRouter        = require('./routes/roomRoute');
 
 app.use('/', indexRouter);
+app.use('/', roomRouter);
 app.use('/feedback', feedbackRouter);
 app.use('/leaderboards', leaderboardRouter);
 app.use('/', authRouter);
