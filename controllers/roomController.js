@@ -28,10 +28,9 @@ const createRoom = async (req, res, next) => {
         const { gameMode, playersLimit, privacy } = req.body;
 
         const room = await Room.create({
-            code:       '',
             access:     privacy,
             type:       gameMode,
-            maxPlayers: parseInt(playersLimit) || 8,
+            maxPlayers: parseInt(playersLimit) || 1,
             users:      [req.user.username],
         });
 
