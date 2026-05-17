@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const roomSchema = new mongoose.Schema({
-    code: { type: String, required: false, unique: false },           // Código do quarto
     access:  { type: String, required: true, unique: false },       // Public ou Private
     type: { type: String, required: true, unique: false },          // Casual, Time Attack, ou 123
     maxPlayers: { type: Number, required: true, unique: false },
